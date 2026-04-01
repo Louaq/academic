@@ -47,39 +47,26 @@
         handleDOMLoaded();
     }
 })();
-async function updateLastCommitDate() {
-    try {
-        const response = await fetch('https://api.github.com/repos/Louaq/academic-homepage/commits?per_page=1');
-        const commits = await response.json();
-
-        if (commits && commits.length > 0) {
-            const lastCommitDate = new Date(commits[0].commit.committer.date);
-            const options = {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
-            const formattedDate = lastCommitDate.toLocaleDateString('en-US', options);
-            document.getElementById('last-updated').textContent = formattedDate;
-        } else {
-            const now = new Date();
-            const options = {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
-            const currentDate = now.toLocaleDateString('en-US', options);
-            document.getElementById('last-updated').textContent = currentDate;
-        }
-    } catch (error) {
-        const now = new Date();
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        };
-        const currentDate = now.toLocaleDateString('en-US', options);
-        document.getElementById('last-updated').textContent = currentDate;
+function updateDeployTime() {
+    const el = document.getElementById('last-updated');
+    if (!el) return;
+    const meta = document.querySelector('meta[name="deploy-time"]');
+    const raw = meta && meta.getAttribute('content');
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'Asia/Shanghai'
+    };
+    let d = null;
+    if (raw && raw !== '__DEPLOY_ISO__') {
+        const parsed = new Date(raw);
+        if (!isNaN(parsed.getTime())) d = parsed;
+    }
+    if (d) {
+        el.textContent = d.toLocaleDateString('en-US', options);
+    } else {
+        el.textContent = '—';
     }
 }
 
@@ -523,7 +510,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentYearElement.textContent = new Date().getFullYear();
     }
     
-    updateLastCommitDate();
+    updateDeployTime();
     setupSmoothScrolling();
     setupMobileMenu();
     disableUnderReviewLinks();

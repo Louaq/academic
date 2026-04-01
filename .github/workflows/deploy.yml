@@ -25,6 +25,11 @@ jobs:
         env:
           SSH_PORT: ${{ secrets.SSH_PORT }}
 
+      - name: Stamp deploy time (Asia/Shanghai)
+        run: |
+          STAMP=$(TZ=Asia/Shanghai date +"%Y-%m-%dT%H:%M:%S+08:00")
+          sed -i "s|__DEPLOY_ISO__|${STAMP}|g" index.html
+
       - name: Deploy via rsync
         run: |
           PORT="${SSH_PORT:-22}"
