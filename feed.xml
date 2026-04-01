@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="https://yangyang.wiki/feed.xml" rel="self" type="application/rss+xml" />
+    <title>YangYang (杨杨) - Homepage</title>
+    <description>YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision</description>
+    <link>https://yangyang.wiki/</link>
+    <pubDate>Wed, 04 Mar 2026 00:00:00 +0800</pubDate>
+    <lastBuildDate>Wed, 04 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <generator>Custom RSS Generator</generator>
+    <language>en-US</language>
+    <webMaster>yangyang@mail.scuec.edu.cn (Yang Yang)</webMaster>
+    <managingEditor>yangyang@mail.scuec.edu.cn (Yang Yang)</managingEditor>
+    <copyright>Copyright 2024-2025 Yang Yang</copyright>
+    <image>
+      <url>https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png</url>
+      <title>YangYang (杨杨) - Homepage</title>
+      <link>https://yangyang.wiki/</link>
+    </image>
+    <item>
+      <title>Learning Symmetric Cross-Modal Representations via Feature Distillation and Contrastive Fusion for Brain Tumor Segmentation</title>
+      <description>A novel deep learning model for multimodal brain tumor segmentation using symmetric feature distillation and contrastive fusion. Currently under review. Authors: Yang Yang, Xiao Zhang, Jianlin Zhu, Pan Lai, Bo Yang, Meng Shi, Huazhu Fu, Yang Wen, Bin Sheng.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#publications</link>
+      <guid isPermaLink="false">publication-symmetric-cross-modal-2026</guid>
+      <category>Publication</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
+    <item>
+      <title>Edge-Prior Guided Hierarchical Transformer for Fine Retinal Vessel Segmentation</title>
+      <description>An edge-prior guided hierarchical transformer network for fine retinal vessel segmentation. Submitted to IEEE Transactions on Medical Imaging (TMI), SCI-Q1. Authors: Yang Yang, Xuyan Huang, Xiao Zhang, Jianlin Zhu, Pan Lai, Bo Yang, Meng Shi, Zimao Li, Jun Tie, Yang Wen, Jin Huang, Bin Sheng.</description>
+      <pubDate>Mon, 01 Oct 2026 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#publications</link>
+      <guid isPermaLink="false">publication-edge-prior-transformer-2026</guid>
+      <category>Publication</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
+    <item>
+      <title>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</title>
+      <description>A novel deep learning model for rice pest and disease detection, accepted by The Visual Computer (TVC) journal (SCI-Q3, IF=2.9). Authors: Yang Yang, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu.</description>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#publications</link>
+      <guid isPermaLink="false">publication-hsfpn-det-2025</guid>
+      <category>Publication</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
+    <item>
+      <title>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</title>
+      <description>We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases. Published in Computer Graphics International Conference (CGI) 2024. Authors: Yang Yang, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang.</description>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0800</pubDate>
+      <link>https://link.springer.com/chapter/10.1007/978-3-031-82024-3_8</link>
+      <guid isPermaLink="false">publication-cgi2024</guid>
+      <category>Publication</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
+  </channel>
+</rss>

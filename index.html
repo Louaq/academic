@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YangYang (杨杨) - Homepage</title>
+    <meta name="description"
+        content="YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision">
+    <meta name="msvalidate.01" content="8C5DEA4BC4C5D459B62F2190B1C21807" />
+    <meta name="google-site-verification" content="RM76xsQIOa7TSHoi1P1vvbTM1PCmd8JiEZklql2coE0" />
+    <meta name="baidu-site-verification" content="codeva-0VVFigLcVz" />
+    <meta name="theme-color" content="#4b2e83">
+    <meta name="msapplication-TileColor" content="#4b2e83">
+    <link rel="icon" type="image/x-icon" href="https://pic1.imgdb.cn/item/6938e8c900233646958ef443.png">
+    <!-- 关键：在任何CSS和其他脚本之前立即恢复滚动位置 -->
+    <script>
+        // 禁用浏览器自动滚动恢复
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        // 立即恢复滚动位置，在页面渲染之前
+        (function () {
+            var savedScrollPosition = sessionStorage.getItem('scrollPosition');
+
+            // 无论任何情况，只要有保存的滚动位置就恢复
+            if (savedScrollPosition) {
+                var scrollY = parseInt(savedScrollPosition, 10);
+                if (scrollY > 0) {
+                    // 创建style元素来锁定滚动位置
+                    var style = document.createElement('style');
+                    style.id = 'scroll-lock';
+                    style.textContent = 'html,body{overflow:hidden!important;position:fixed!important;top:-' + scrollY + 'px!important;left:0!important;right:0!important;width:100%!important;}';
+                    document.head.appendChild(style);
+                    // 保存滚动位置供后续使用
+                    window.__savedScrollY = scrollY;
+                }
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.webstatic.cn/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.webstatic.cn/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.iocdn.cc/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.iocdn.cc/css2?family=Lora:wght@400;500;600;700&display=swap" media="print"
+        onload="this.media='all'">
+    <script defer src="https://events.vercount.one/js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-title">
+                <a href="#home" style="text-decoration: none; font-size: 16.848px;">Homepage</a>
+            </div>
+            <!-- 汉堡菜单按钮 (仅在移动端显示) -->
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- 桌面端导航链接 -->
+            <div class="nav-links desktop-nav">
+                <a href="#news">News</a>
+                <a href="#publications">Publications</a>
+                <a href="#awards">Awards</a>
+                <a href="#education">Education</a>
+                <a href="#services">Services</a>
+            </div>
+        </div>
+        <!-- 移动端侧边栏菜单 -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#news">News</a>
+            <a href="#publications">Publications</a>
+            <a href="#awards">Awards</a>
+            <a href="#education">Education</a>
+            <a href="#services">Services</a>
+        </div>
+        <a href="https://github.com/Louaq" class="github-corner" aria-label="View source on GitHub" target="_blank">
+            <svg width="64" height="64" viewBox="0 0 250 250"
+                style="fill:#70B7FD; color:#fff; position:absolute; top:0; right:0; border:0; z-index:1100;"
+                aria-hidden="true">
+                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                <path
+                    d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                    fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                <path
+                    d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                    fill="currentColor" class="octo-body"></path>
+            </svg>
+        </a>
+        <style>
+            .github-corner:hover .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+
+            @keyframes octocat-wave {
+
+                0%,
+                100% {
+                    transform: rotate(0)
+                }
+
+                20%,
+                60% {
+                    transform: rotate(-25deg)
+                }
+
+                40%,
+                80% {
+                    transform: rotate(10deg)
+                }
+            }
+
+            @media (max-width:900px) {
+                .github-corner svg {
+                    width: 56px;
+                    height: 56px
+                }
+            }
+
+            @media (max-width:500px) {
+                .github-corner:hover .octo-arm {
+                    animation: none
+                }
+
+                .github-corner .octo-arm {
+                    animation: octocat-wave 560ms ease-in-out
+                }
+
+                .github-corner svg {
+                    width: 48px;
+                    height: 48px
+                }
+            }
+        </style>
+    </nav>
+
+    <!-- 移动端菜单遮罩层 -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <div class="container">
+        <!-- Main Content Layout -->
+        <div class="main-layout" id="home">
+            <!-- Left Sidebar -->
+            <div class="left-sidebar">
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="https://pic1.imgdb.cn/item/693bd84542271a4090913b0a.png" alt="YangYang Profile Photo">
+                    </div>
+                    <div class="profile-name">Yang Yang <img
+                            src="https://pic1.imgdb.cn/item/692983567f8e1c7378238fce.png" alt="鲁迅字体"></div>
+                    <div class="profile-bio">South-Central Minzu University</div>
+                    <div class="profile-bio">A Master student.</div>
+                    <div class="profile-links">
+                        <a href="#" class="profile-link-item location-link">
+                            <i class="fa fa-fw fa-map-marker"></i>
+                            <span>Hubei, China</span>
+                        </a>
+                        <a href="#" class="profile-link-item email-link" id="emailIcon" style="position: relative;">
+                            <i class="fas fa-fw fa-envelope"></i>
+                            <span>Email</span>
+                            <span class="email-copy-toast" id="emailCopyToast">Copy!</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank"
+                            class="profile-link-item scholar-link">
+                            <i class="ai ai-google-scholar-square"></i>
+                            <span>Google Scholar</span>
+                        </a>
+                        <a href="https://github.com/Louaq" target="_blank" class="profile-link-item github-link">
+                            <i class="fab fa-fw fa-github"></i>
+                            <span>Github</span>
+                        </a>
+                        <a href="https://orcid.org/0009-0009-6670-7889" target="_blank"
+                            class="profile-link-item orcid-link">
+                            <i class="ai ai-orcid-square ai-fw"></i>
+                            <span>ORCID</span>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Yang-Yang-826" target="_blank" class="profile-link-item researchgate-link">
+                            <i class="fab fa-fw fa-researchgate"></i>
+                            <span>ResearchGate</span>
+                        </a>
+                        <a href="https://steamcommunity.com/profiles/76561198924508021/" target="_blank"
+                            class="profile-link-item steam-link">
+                            <i class="fab fa-fw fa-steam"></i>
+                            <span>Steam</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="right-content">
+                <!-- About Me Section -->
+                <section class="about-section">
+                    <h2>👋About Me</h2>
+                    <p> I am a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm" target="_blank">School of Computer Science (School of Artificial Intelligence)</a>, 
+                        <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a>, advised by <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu (朱剑林)</a>. 
+                        My research lies in the interdisciplinary areas of artificial intelligence and medical image analysis, aiming at advancing healthcare with machine intelligence. 
+                        My research focuses on <b>Multimodal Medical Image Analysis</b> and <b>Computer Vision</b>.
+                        I am particularly interested in developing innovative deep learning methodologies for multimodal medical image analysis and healthcare technology applications. 
+                        I also received my B.S. degree in Network Engineering from South-Central Minzu University in 2024.
+                    </p>
+                    <div class="notice-box">
+                        <div class="notice-header" style="font-weight: bold;">NOTE</div>
+                        <div class="notice-content">
+                            If you are interested in my academic research, 
+                            please feel free to <span class="highlight-text">contact me</span> at any time. 
+                            I am eager to communicate with you! 🤓🤓🤓
+                        </div>
+                    </div>
+                </section>
+                <!-- News Section -->
+                <section class="news-section" id="news">
+                    <h2>🔥 News</h2>
+                    <div class="news-list">
+                        <ul>
+                            <li>[10/2025] 🎉🎉 One paper was accepted by <b style="color: red;">TVC</b>.</li>
+                            <li>[09/2025] 🤗🤗 I am awarded the <b style="color: red;">First-class Academic Scholarship(top 1)</b> for master's students.</li>
+                            <li>[09/2025] 🤗🤗 I am awarded the <b style="color: red;">Outstanding Graduate Student</b> for master's students.</li>
+                            <li>[03/2025] 🎉🎉 One paper was accepted by <b style="color: red;">CGI</b>.</li>
+                            <li>[11/2024] 🎉🎉 Attended CNCC2024 in Hengdian, Zhejiang.</li>
+                            <li>[09/2024] 🎉🎉 Started my MS studies at South-Central Minzu University.</li>
+                            <li>[06/2024] 🎉🎉 Graduated with B.S. in Network Engineering.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Publications Section -->
+                <section class="publications-section" id="publications">
+                    <h2>📝 Publications</h2>
+                    <div class="pub-filter-header">
+                        <div class="corresponding-author-note">* corresponding author</div>
+                        <div class="year-filter-buttons">
+                            <button class="year-filter-btn active" data-year="all">All</button>
+                            <button class="year-filter-btn" data-year="2026">2026</button>
+                            <button class="year-filter-btn" data-year="2025">2025</button>
+                            <button class="year-filter-btn" data-year="2024">2024</button>
+                        </div>
+                    </div>
+                    <div class="publications-list">
+                        <!-- Year 2026 -->
+                        <div class="year-header" data-year="2026">
+                            <h3>2026 (2)</h3>
+                        </div>
+                        <div class="publication-item" data-date="2026-04" data-status="under-review" data-year="2026">
+                            <div class="pub-image">
+                                <span class="badge-blue">Under Review</span>
+                                <img src="https://pic1.imgdb.cn/item/69cc68cf5cfefdcff4b309e7.webp"
+                                    alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <div style="font-weight: bold;">Background as Parts Sub-Background Modeling for Uncertainty-Aware Semi-Supervised Medical Image Segmentation</div>
+                                <!-- <div class="authors"><span><b class="first-author">Yang Yang</b></span>, <a href="https://scholar.google.com/citations?user=yGg0OisAAAAJ&hl=en" target="_blank">Xiao Zhang</a>, <span>Jianlin Zhu*</span>, <span>Pan Lai</span>,
+                                    <span>Bo Yang</span>, <span>Meng Shi</span>, <span>Yang
+                                        Wen</span>, <span>Bin Sheng*</span>
+                                </div> -->
+                                <div class="venue"></div>
+                                <ul class="pub-links">
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[paper]</a></li>
+                                    <li>/</li>
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[code]</a></li>
+                                    <li>/</li>
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[bibtex]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Publication 2 -->
+                        <div class="publication-item" data-date="2026-03" data-status="under-review" data-year="2026">
+                            <div class="pub-image">
+                                <span class="badge-blue">Under Review</span>
+                                <img src="https://pic1.imgdb.cn/item/69a7e90ae2b0164ce37a4a22.png"
+                                    alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <div style="font-weight: bold;">Learning Symmetric Cross-Modal Representations via Feature Distillation and Contrastive Fusion for Brain Tumor Segmentation</div>
+                                <!-- <div class="authors"><span><b class="first-author">Yang Yang</b></span>, <a href="https://scholar.google.com/citations?user=yGg0OisAAAAJ&hl=en" target="_blank">Xiao Zhang</a>, <span>Jianlin Zhu*</span>, <span>Pan Lai</span>,
+                                    <span>Bo Yang</span>, <span>Meng Shi</span>, <span>Huazhu Fu</span>, <span>Yang
+                                        Wen</span>, <span>Bin Sheng*</span>
+                                </div> -->
+                                <div class="venue"></div>
+                                <ul class="pub-links">
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[paper]</a></li>
+                                    <li>/</li>
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[code]</a></li>
+                                    <li>/</li>
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[bibtex]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="publication-item" data-date="2026-10" data-status="under-review" data-year="2026">
+                            <div class="pub-image">
+                                <span class="badge-blue">Under Review</span>
+                                <img src="https://pic1.imgdb.cn/item/693bd8aa42271a4090913b72.png"
+                                    alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <div style="font-weight: bold;">Edge-Prior Guided Hierarchical Transformer for Fine Retinal Vessel Segmentation</div>
+                                <!-- <div class="authors"><span><b class="first-author">Yang Yang</b></span>, <a href="https://orcid.org/0009-0001-4221-7545">Xuyan
+                                        Huang</a>, <a href="https://scholar.google.com/citations?user=yGg0OisAAAAJ&hl=en" target="_blank">Xiao Zhang</a>, <span>Jianlin Zhu*</span>, <span>Pan
+                                        Lai</span>, <span>Bo
+                                        Yang</span>, <span>Meng Shi</span>, <span>Zimao Li</span>, <span>Jun
+                                        Tie</span>, <span>Yang Wen</span>, <span>Jin
+                                        Huang</span>, <span>Bin Sheng*</span></div> -->
+                                <!-- <div class="venue"><b class="first-author" style="font-style: italic;">IEEE Transactions on Medical Imaging (TMI)</b> (SCI-Q1)</div> -->
+                                <ul class="pub-links">
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[paper]</a></li>
+                                    <li>/</li>
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[code]</a></li>
+                                    <li>/</li>
+                                    <li><a href="" style="color: rgb(183, 207, 243); pointer-events: none;"
+                                            target="_blank">[bibtex]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Year 2025 -->
+                        <div class="year-header" data-year="2025">
+                            <h3>2025 (1)</h3>
+                        </div>
+                        <!-- Publication 1 -->
+                        
+                        <!-- Publication 2 -->
+                        <div class="publication-item" data-date="2025-10" data-status="accepted" data-year="2025">
+                            <div class="pub-image">
+                                <span class="badge-blue">TVC 2025</span>
+                                <img src="https://pic1.imgdb.cn/item/693bd8bf42271a4090913b7a.png"
+                                    alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <div style="font-weight: bold;">HSFPN-Det: An Effective Model for Detecting Rice Pests
+                                    and Diseases</div>
+                                <div class="authors"><span><b class="first-author">Yang Yang</b></span>, <a
+                                        href="https://xxxx-bella.github.io/yuxinh.github.io/"
+                                        target="_blank"><span>Yuxin
+                                            Hong</span></a>, <span>Wenjie Yu</span>, <a href="https://scholar.google.com/citations?user=yGg0OisAAAAJ&hl=en" target="_blank">Xiao Zhang</a>, <span>Bo
+                                        Yang</span>, <span>Meng Shi</span>, <span>Yangguang Sun</span>, <span>Jun
+                                        Wang</span>, <span>Jianlin Zhu*</span></div>
+                                <div class="venue"><b class="first-author" style="font-style: italic;">The Visual Computer (TVC)</b> (SCI-Q3, IF=2.9)</div>
+                                <ul class="pub-links">
+                                    <li><a href="pdf/s00371-025-04225-9.pdf" target="_blank">[paper]</a></li>
+                                    <li>/</li>
+                                    <li><a href="https://github.com/Louaq/HSFPN-Det" target="_blank">[code]</a></li>
+                                    <li>/</li>
+                                    <li><a href="bibtex/yang2026hsfpn.txt" target="_blank">[bibtex]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Year 2024 -->
+                        <div class="year-header" data-year="2024">
+                            <h3>2024 (1)</h3>
+                        </div>
+                        <!-- Publication 4 -->
+                        <div class="publication-item" data-date="2024-12" data-status="accepted" data-year="2024">
+                            <div class="pub-image">
+                                <span class="badge-blue">CGI 2024</span>
+                                <img src="https://pic1.imgdb.cn/item/693bd8d542271a4090913b7e.png"
+                                    alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <div style="font-weight: bold;">An Improved YOLOv8-Based Rice Pest and Disease Detection
+                                    Method</div>
+                                <div class="authors"><span><b class="first-author">Yang Yang</b></span>, <span>Jianlin
+                                        Zhu*</span>, <span>Bo Yang</span>, <a href="https://scholar.google.com/citations?user=yGg0OisAAAAJ&hl=en" target="_blank">Xiao Zhang</a>, <span>Jin
+                                        Huang</span></div>
+                                <div class="venue"><b class="first-author" style="font-style: italic;">CGI 2024</b> (CCF
+                                    C)</div>
+                                <ul class="pub-links">
+                                    <li><a href="pdf/978-3-031-82024-3_8.pdf" target="_blank">[paper]</a></li>
+                                    <li>/</li>
+                                    <li><a href="https://github.com/Louaq/CGI2024" target="_blank">[code]</a></li>
+                                    <li>/</li>
+                                    <li><a href="bibtex/yang2024improved.txt" target="_blank">[bibtex]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- Awards Section -->
+                <section class="awards-section" id="awards">
+                    <h2>🏆Awards</h2>
+                    <div style="overflow: auto;">
+                        <ul>
+                            <li>[09/2025] First-class Academic Scholarship for Graduate Students (<b
+                                    class="first-author" style="font-style: italic;">TOP 1</b>) 🥺🙃</li>
+                            <li>[09/2025] Outstanding Graduate Student 🙂🤓</li>
+                            <li>[09/2024] Second-class Academic Scholarship for Graduate Students 🙂🥳</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!-- Education Section -->
+                <section class="education-section" id="education">
+                    <h2>📖 Education</h2>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="edu-logo">
+                                <img src="https://pic1.imgdb.cn/item/6919c42f3203f7be000aeacc.png"
+                                    alt="South-Central Minzu University" class="university-logo">
+                            </div>
+                            <div class="edu-text-wrapper">
+                                <div class="edu-content">
+                                    <div class="edu-institution">School of Computer Science, South-Central Minzu
+                                        University</div>
+                                    <div class="edu-degree">Wuhan, China</div>
+                                    <strong style="color: #b7282e;">Master</strong>
+                                    <div class="edu-period mobile-period">Sep. 2024 - present</div>
+                                </div>
+                                <div class="edu-period desktop-period">Sep. 2024 - present</div>
+                            </div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="edu-logo">
+                                <img src="https://pic1.imgdb.cn/item/6919c42f3203f7be000aeacc.png"
+                                    alt="South-Central Minzu University" class="university-logo">
+                            </div>
+                            <div class="edu-text-wrapper">
+                                <div class="edu-content">
+                                    <div class="edu-institution">School of Computer Science, South-Central Minzu
+                                        University</div>
+                                    <div class="edu-degree">Wuhan, China</div>
+                                    <strong style="color: #F5A13D;">Undergraduate</strong>
+                                    <div class="edu-period mobile-period">Sep. 2020 - Jul. 2024</div>
+                                </div>
+                                <div class="edu-period desktop-period">Sep. 2020 - Jul. 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Services Section -->
+                <section class="services-section" id="services">
+                    <h2>🏷️ Services</h2>
+                    <div class="services-content">
+                        <div class="service-category">
+                            <ul class="service-list">
+                                <li>Reviewer of <span class="code">CGI 2024</span></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Visitor Map Section -->
+                <section class="visitor-map-section" id="visitor-map">
+                    <h2>🗺️ Visitors</h2>
+                    <div class="visitor-map-container">
+                        <script type='text/javascript' id='clustrmaps'
+                            src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=a&t=tt&d=JlK_ojZkG4rP4iFipfTcmOprD4HYOmgccf9iIbZtOxk&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=0b0b0c'></script>
+                    </div>
+                </section>
+
+                <!-- <script src="https://giscus.app/client.js" 
+                    data-repo="Louaq/academic-homepage"
+                    data-repo-id="R_kgDOQRmNUQ" 
+                    data-category="Announcements" 
+                    data-category-id="DIC_kwDOQRmNUc4CyCIP"
+                    data-mapping="pathname" 
+                    data-strict="0" 
+                    data-reactions-enabled="1" 
+                    data-emit-metadata="0"
+                    data-input-position="bottom" 
+                    data-theme="noborder_light" 
+                    data-lang="zh-CN"
+                    crossorigin="anonymous" async>
+                </script> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (full width) -->
+    <footer class="main-footer" style="color: #BDC1C4;">
+        <div class="page__footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <!-- start custom footer snippets -->
+                    <a href="sitemap.xml" target="_blank">Sitemap</a>
+                    <!-- end custom footer snippets -->
+                    <div class="page__footer-follow">
+                        <ul class="social-icons">
+                            <li>FOLLOW:</li>
+                            <li><a href="feed.xml" target="_blank"><i class="fa fa-fw fa-rss-square"
+                                        aria-hidden="true"></i>FEED</a></li>
+                        </ul>
+                    </div>
+                    <div class="page__footer-copyright">
+                        © <span id="current-year"></span> Yang Yang | Last updated: <span id="last-updated"></span> |
+                        Total Visits: <span id="vercount_value_site_pv">Loading</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+
+</body>
+
+</html>

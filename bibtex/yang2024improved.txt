@@ -1,0 +1,8 @@
+@inproceedings{yang2024improved,
+  title={An Improved YOLOv8-Based Rice Pest and Disease Detection},
+  author={Yang, Yang and Zhu, Jianlin and Yang, Bo and Zhang, Xiao and Huang, Jin},
+  booktitle={Computer Graphics International Conference},
+  pages={96--107},
+  year={2024},
+  organization={Springer}
+}

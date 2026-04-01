@@ -1,0 +1,10 @@
+@article{yang2026hsfpn,
+  title={HSFPN-Det: an effective model for detecting rice pests and diseases},
+  author={Yang, Yang and Hong, Yuxin and Yu, Wenjie and Zhang, Xiao and Yang, Bo and Shi, Meng and Sun, Yangguang and Wang, Jun and Zhu, Jianlin},
+  journal={The Visual Computer},
+  volume={42},
+  number={1},
+  pages={61},
+  year={2026},
+  publisher={Springer}
+}
