@@ -374,48 +374,29 @@ function setupPublicationsFilter() {
 
     if (!publicationsList || filterButtons.length === 0) return;
 
-    // 缓存所有元素，避免重复查询DOM
-    const yearHeaders = Array.from(publicationsList.querySelectorAll('.year-header'));
-    const allItems = Array.from(publicationsList.querySelectorAll('.publication-item'));
+    // 按年份整块筛选（每块内含 <ol>，序号由 HTML 列表自动生成）
+    const yearSections = Array.from(publicationsList.querySelectorAll('.year-section'));
 
-    // 筛选函数 - 直接操作style.display，确保立即生效，无延迟
     function filterByYear(year) {
-        var i, headerYear, itemYear, header, item;
-        
+        var i;
+        var sec;
+        var sy;
         if (year === 'all') {
-            // 显示所有年份标题和文章 - 直接设置style，最快
-            for (i = 0; i < yearHeaders.length; i++) {
-                header = yearHeaders[i];
-                header.style.display = '';
-                header.classList.remove('year-hidden');
-            }
-            for (i = 0; i < allItems.length; i++) {
-                item = allItems[i];
-                item.style.display = '';
-                item.classList.remove('year-hidden');
+            for (i = 0; i < yearSections.length; i++) {
+                sec = yearSections[i];
+                sec.style.display = '';
+                sec.classList.remove('year-hidden');
             }
         } else {
-            // 筛选年份标题和文章 - 直接设置style，最快
-            for (i = 0; i < yearHeaders.length; i++) {
-                header = yearHeaders[i];
-                headerYear = header.getAttribute('data-year');
-                if (headerYear === year) {
-                    header.style.display = '';
-                    header.classList.remove('year-hidden');
+            for (i = 0; i < yearSections.length; i++) {
+                sec = yearSections[i];
+                sy = sec.getAttribute('data-year');
+                if (sy === year) {
+                    sec.style.display = '';
+                    sec.classList.remove('year-hidden');
                 } else {
-                    header.style.display = 'none';
-                    header.classList.add('year-hidden');
-                }
-            }
-            for (i = 0; i < allItems.length; i++) {
-                item = allItems[i];
-                itemYear = item.getAttribute('data-year');
-                if (itemYear === year) {
-                    item.style.display = '';
-                    item.classList.remove('year-hidden');
-                } else {
-                    item.style.display = 'none';
-                    item.classList.add('year-hidden');
+                    sec.style.display = 'none';
+                    sec.classList.add('year-hidden');
                 }
             }
         }

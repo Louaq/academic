@@ -944,41 +944,43 @@ body {
 .news-section li:last-child {
     margin-bottom: 0;
 }
-.publication-item {
-    padding-left: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 2em;
-    align-items: center;
+/* 每年一块：<section year> + <ol><li class="publication-item">… */
+.year-section {
+    margin-bottom: 0;
+}
+
+.publications-year-list {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 0 0 0.2em 0;
+    padding-left: 2.5em;
+}
+
+.publications-year-list > .publication-item::marker {
+    font-weight: 600;
+    color: #333;
+}
+
+.publications-year-list > .publication-item {
+    display: list-item;
+    padding-left: 0.4em;
+    margin-bottom: 0.55em;
+}
+
+.publications-year-list > .publication-item:last-child {
+    margin-bottom: 0;
 }
 
 .publication-item:last-child {
     border-bottom: none;
 }
 
-.pub-image {
-    flex: 0 0 350px;
-    width: 350px;
-    height: 192px;
-    align-self: center;
-    position: relative;
-}
-
-.pub-image img:not(.badge-svg) {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 4px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    background-color: #f8f9fa;
-}
-
 .pub-content {
-    flex: 1;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    line-height: 1.38;
 }
 
 .pub-content h3 {
@@ -990,7 +992,7 @@ body {
 
 .authors {
     color: #333;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 /* .first-author{
@@ -998,17 +1000,31 @@ body {
 } */
 
 .venue {
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 
+}
+
+/* 无封面图时：审稿中条目在 .venue 显示状态（空 venue 用伪元素） */
+.publication-item[data-status="under-review"] .venue {
+    margin: 3px 0 4px 0;
+    color: #c00;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.35;
+    min-height: 1.1em;
+}
+
+.publication-item[data-status="under-review"] .venue:empty::before {
+    content: "Under Review";
 }
 
 .pub-links {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 2px 0 0 0;
 }
 
 .pub-links li {
@@ -1541,14 +1557,14 @@ section[id] {
 /* 年份分组标题样式 */
 .year-header {
     display: block;
-    padding-bottom: 8px;
+    padding-bottom: 2px;
 }
 
 .year-header h3 {
     color: #2C5AA0
 }
 
-.year-header:first-child {
+.publications-list > .year-section:first-child .year-header {
     margin-top: 10px;
 }
 
@@ -1580,6 +1596,7 @@ section[id] {
 
 /* 优化年份筛选元素的渲染性能 */
 .year-header,
+.year-section,
 .publication-item {
     will-change: display;
     contain: layout style;
@@ -1672,6 +1689,9 @@ section[id] {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     font-size: 1em;
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
     background: #fafafa;
     border: 1px solid #f2f3f3;
     border-radius: 4px;
@@ -2156,31 +2176,15 @@ section[id] {
         height: 140px;
     }
 
-    /* 隐藏publications、projects、talks部分的图片 */
-    .pub-image,
+    /* 隐藏 projects、talks 部分的图片 */
     .project-image,
     .talk-image {
         display: none;
-    }
-
-    /* 移动端显示 under review 状态 - 放在期刊/会议位置（.venue） */
-    .publication-item[data-status="under-review"] .venue {
-        margin: 6px 0 8px 0;
-        color: red;
-        font-style: italic;
-        font-weight: bold;
-        line-height: 1.4;
-    }
-
-    /* venue为空时用伪元素填充（避免改动HTML正文内容） */
-    .publication-item[data-status="under-review"] .venue:empty::before {
-        content: "Under Review";
     }
 }
 
 /* 特定宽度820px左右的布局调整 */
 @media (max-width: 900px) and (min-width: 769px) {
-    .publication-item,
     .project-item,
     .talk-item {
         display: flex;
@@ -2200,7 +2204,6 @@ section[id] {
         font-size: 1.25em;
     }
 
-    .pub-image,
     .project-image,
     .talk-image {
         width: 100%;
@@ -2211,7 +2214,6 @@ section[id] {
         box-sizing: border-box; /* 确保box-sizing一致 */
     }
 
-    .pub-image img:not(.badge-svg),
     .project-image img:not(.badge-svg),
     .talk-image img:not(.badge-svg) {
         width: 100%;
@@ -2315,12 +2317,18 @@ section[id] {
         margin-left: 0; /* 移动端取消左边距 */
     }
 
-    .publication-item,
     .project-item,
     .talk-item {
         gap: 15px;
-        text-align: center;
+    }
 
+    .publications-year-list > .publication-item {
+        text-align: left;
+    }
+
+    .project-item,
+    .talk-item {
+        text-align: center;
     }
 
     /* 移动端年份标题样式 */
@@ -2332,7 +2340,6 @@ section[id] {
         font-size: 1.25em;
     }
 
-    .pub-image,
     .project-image,
     .talk-image {
         flex: none;
@@ -2342,7 +2349,6 @@ section[id] {
         margin: 0 auto;
     }
 
-    .pub-image img:not(.badge-svg),
     .project-image img:not(.badge-svg),
     .talk-image img:not(.badge-svg) {
         width: 100%;
@@ -2528,13 +2534,15 @@ section[id] {
         margin-right: 8px;
     }
 
-    .publication-item,
     .project-item {
         gap: 12px;
         margin-bottom: 10px;
     }
 
-    .publication-item:last-child,
+    .publications-year-list > .publication-item {
+        margin-bottom: 3px;
+    }
+
     .project-item:last-child {
         border-bottom: none;
     }
@@ -2548,7 +2556,6 @@ section[id] {
         margin-left: 20px;
     }
 
-    .pub-image,
     .project-image,
     .talk-image {
         align-self: center;
@@ -2561,7 +2568,6 @@ section[id] {
         aspect-ratio: 350/192;
     }
 
-    .pub-image img:not(.badge-svg),
     .project-image img:not(.badge-svg),
     .talk-image img:not(.badge-svg) {
         width: 100%;
@@ -2960,7 +2966,6 @@ section[id] {
         font-size: 14.4px;
     }
 
-    .pub-image,
     .project-image,
     .talk-image {
         max-width: 100%;
@@ -2969,7 +2974,6 @@ section[id] {
         aspect-ratio: 16/9;
     }
 
-    .pub-image img:not(.badge-svg),
     .project-image img:not(.badge-svg),
     .talk-image img:not(.badge-svg) {
         width: 100%;
@@ -2987,20 +2991,25 @@ section[id] {
         padding: 2px 5px;
     }
 
-    .pub-content,
     .project-content {
         padding: 8px 0;
         text-align: left;
         display: block;
     }
 
+    .publications-section .pub-content {
+        padding: 2px 0;
+        text-align: left;
+        display: block;
+    }
+
     .authors {
-        margin-bottom: 4px;
+        margin-bottom: 2px;
     }
 
     .venue {
-        margin-bottom: 6px;
-        line-height: 1.4;
+        margin-bottom: 3px;
+        line-height: 1.35;
     }
 
     .pub-description,
@@ -3114,8 +3123,8 @@ section[id] {
     }
 
     .pub-links {
-        margin-top: 8px;
-        gap: 8px;
+        margin-top: 3px;
+        gap: 6px;
     }
 }
 
