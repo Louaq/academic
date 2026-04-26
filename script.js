@@ -24,11 +24,17 @@
         const scrollLock = document.getElementById('scroll-lock');
         if (scrollLock) {
             const scrollY = window.__savedScrollY || 0;
-            scrollLock.remove();
-            // 立即恢复滚动位置
+            // 清除兜底超时
+            if (window.__scrollLockTimeout) {
+                clearTimeout(window.__scrollLockTimeout);
+            }
+            // 先恢复滚动位置，再通过 rAF 显示页面，避免闪烁
             if (scrollY > 0) {
                 window.scrollTo(0, scrollY);
             }
+            requestAnimationFrame(function() {
+                scrollLock.remove();
+            });
         }
 
         // 添加统一的滚动监听

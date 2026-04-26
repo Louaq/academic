@@ -484,6 +484,7 @@ body {
     text-align: center;
     padding: 30px 20px;
     border-radius: 8px;
+    min-height: 420px;
 }
 
 .profile-photo {
@@ -496,6 +497,7 @@ body {
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
+    background-color: #ebebeb;
 }
 
 .profile-name {
@@ -514,6 +516,7 @@ body {
 .profile-name img {
     vertical-align: middle;
     width: auto;
+    height: 28px;
     display: inline-block;
 }
 
@@ -1410,11 +1413,6 @@ strong {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
-
-.profile-photo img:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 .profile-content {
     flex: 1;
 }
@@ -1605,7 +1603,7 @@ section[id] {
 /* 年份筛选按钮样式 */
 .year-filter-btn {
     padding: 5px 14px;
-    border: 1px solid #ddd;
+    border: none;
     background-color: transparent;
     color: #666;
     border-radius: 4px;
@@ -1616,14 +1614,13 @@ section[id] {
 }
 
 .year-filter-btn:hover {
-    background-color: #f5f5f5;
-    border-color: #ccc;
+    color: #2C5AA0;
 }
 
 .year-filter-btn.active {
-    background-color: #2C5AA0;
-    color: white;
-    border-color: #2C5AA0;
+    color: #2C5AA0;
+    border-bottom: 2px solid #2C5AA0;
+    border-radius: 0;
 }
 /* Corresponding Author Note */
 .corresponding-author-note {
@@ -1712,22 +1709,20 @@ section[id] {
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 10px 0;
     overflow: hidden;
 }
 
-/* 使用 transform scale 缩小地图，保持完整显示 */
 .visitor-map-container a {
-    transform: scale(0.75);
-    transform-origin: center center;
     display: block !important;
-    margin: -80px auto !important;
+    margin: 0 auto !important;
 }
 
 .visitor-map-container a img,
 .visitor-map-container img {
     display: block !important;
     border: none !important;
+    max-width: 100% !important;
 }
 
 /* 移动端隐藏访客地图 */
@@ -2279,10 +2274,6 @@ section[id] {
     .profile-photo img {
         width: 150px;
         height: 150px;
-    }
-
-    .profile-bio {
-        display: none;
     }
 
     .profile-links {
