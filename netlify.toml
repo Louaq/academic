@@ -1,0 +1,4 @@
+# 构建时用当前 UTC 时间替换 index.html 中的 __DEPLOY_ISO__，供页脚「Last updated」显示。
+[build]
+  publish = "."
+  command = "DEPLOY_ISO=$(date -u +'%Y-%m-%dT%H:%M:%SZ') && sed -i \"s/__DEPLOY_ISO__/${DEPLOY_ISO}/g\" index.html"

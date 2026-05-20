@@ -69,6 +69,13 @@ function updateDeployTime() {
         const parsed = new Date(raw);
         if (!isNaN(parsed.getTime())) d = parsed;
     }
+    // 占位符未替换时（例如未配置 build）：用文档 Last-Modified，但跳过「≈当前时间」的浏览器兜底值
+    if (!d && (!raw || raw === '__DEPLOY_ISO__')) {
+        const lm = new Date(document.lastModified).getTime();
+        if (!isNaN(lm) && Math.abs(Date.now() - lm) > 5000) {
+            d = new Date(lm);
+        }
+    }
     if (d) {
         el.textContent = d.toLocaleDateString('en-US', options);
     } else {
