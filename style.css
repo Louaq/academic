@@ -608,6 +608,14 @@ body {
     color: #ea4335;
 }
 
+.profile-link-item.cv-link i {
+    color: #d93025;
+}
+
+.profile-link-item.cv-link:hover i {
+    color: #d93025;
+}
+
 .profile-link-item.scholar-link i {
     color: #4285f4;
 }

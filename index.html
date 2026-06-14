@@ -14,28 +14,21 @@
     <meta name="msapplication-TileColor" content="#4b2e83">
     <meta name="deploy-time" content="__DEPLOY_ISO__">
     <link rel="icon" type="image/x-icon" href="https://pic1.imgdb.cn/item/6938e8c900233646958ef443.png">
-    <!-- 关键：在任何CSS和其他脚本之前立即恢复滚动位置 -->
     <script>
-        // 禁用浏览器自动滚动恢复
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        // 立即恢复滚动位置，在页面渲染之前
         (function () {
             var savedScrollPosition = sessionStorage.getItem('scrollPosition');
 
-            // 无论任何情况，只要有保存的滚动位置就恢复
             if (savedScrollPosition) {
                 var scrollY = parseInt(savedScrollPosition, 10);
                 if (scrollY > 0) {
-                    // 使用 visibility:hidden 隐藏页面，避免 position:fixed 移除时的闪烁
                     var style = document.createElement('style');
                     style.id = 'scroll-lock';
                     style.textContent = 'html{visibility:hidden!important;}';
                     document.head.appendChild(style);
-                    // 保存滚动位置供后续使用
                     window.__savedScrollY = scrollY;
-                    // 兜底：2秒后强制显示，防止脚本失败导致页面永久不可见
                     window.__scrollLockTimeout = setTimeout(function() {
                         var lock = document.getElementById('scroll-lock');
                         if (lock) lock.remove();
@@ -56,17 +49,14 @@
 </head>
 
 <body>
-    <!-- 顶部导航栏 -->
     <nav class="top-nav">
         <div class="nav-container">
             <div class="nav-title">
                 <a href="#home" style="text-decoration: none; font-size: 16.848px;">Homepage</a>
             </div>
-            <!-- 汉堡菜单按钮 (仅在移动端显示) -->
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <!-- 桌面端导航链接 -->
             <div class="nav-links desktop-nav">
                 <a href="#news">News</a>
                 <a href="#publications">Publications</a>
@@ -75,7 +65,6 @@
                 <a href="#services">Services</a>
             </div>
         </div>
-        <!-- 移动端侧边栏菜单 -->
         <div class="mobile-nav" id="mobileNav">
             <a href="#news">News</a>
             <a href="#publications">Publications</a>
@@ -143,7 +132,6 @@
         </style>
     </nav>
 
-    <!-- 移动端菜单遮罩层 -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
     <div class="container">
@@ -160,14 +148,18 @@
                     <div class="profile-bio">South-Central Minzu University</div>
                     <div class="profile-bio">A Master student.</div>
                     <div class="profile-links">
-                        <a href="#" class="profile-link-item location-link">
+                        <!-- <a href="#" class="profile-link-item location-link">
                             <i class="fa fa-fw fa-map-marker"></i>
                             <span>Hubei, China</span>
-                        </a>
+                        </a> -->
                         <a href="#" class="profile-link-item email-link" id="emailIcon" style="position: relative;">
                             <i class="fas fa-fw fa-envelope"></i>
                             <span>Email</span>
                             <span class="email-copy-toast" id="emailCopyToast">Copy!</span>
+                        </a>
+                        <a href="pdf/cv.pdf" target="_blank" class="profile-link-item cv-link">
+                            <i class="fas fa-fw fa-file-lines"></i>
+                            <span>CV</span>
                         </a>
                         <a href="https://scholar.google.com/citations?user=HE7XudcAAAAJ" target="_blank"
                             class="profile-link-item scholar-link">
@@ -204,16 +196,16 @@
                     <p> I am a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm" target="_blank">School of Computer Science (School of Artificial Intelligence)</a>, 
                         <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a>, advised by <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu (朱剑林)</a>. 
                         My research lies in the interdisciplinary areas of artificial intelligence and medical image analysis, aiming at advancing healthcare with machine intelligence. 
-                        My research focuses on <b>Multimodal Medical Image Analysis</b> and <b>Computer Vision</b>.
+                        My research focuses on <b>Semi-supervised Medical Image Segmentation</b> and <b>Computer Vision</b>.
                         I am particularly interested in developing innovative deep learning methodologies for multimodal medical image analysis and healthcare technology applications. 
                         I also received my B.S. degree in Network Engineering from South-Central Minzu University in 2024.
                     </p>
                     <div class="notice-box">
                         <div class="notice-header" style="font-weight: bold;">NOTE</div>
                         <div class="notice-content">
-                            If you are interested in my academic research, 
-                            please feel free to <span class="highlight-text">contact me</span> at any time. 
-                            I am eager to communicate with you! 🤓🤓🤓
+                            I am currently applying for Ph.D. programs starting in Fall 2027. 
+                            My research interests include Computer Vision, Medical Image Segmentation and Multimodal Learning. 
+                            Please feel free to view my <a href="pdf/cv.pdf" target="_blank" class="highlight-text" style="font-weight: bold;">CV</a> for more details.
                         </div>
                     </div>
                 </section>
@@ -444,7 +436,6 @@
         </div>
     </footer>
 
-    <!-- 回到顶部按钮 -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
