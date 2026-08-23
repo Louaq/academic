@@ -387,30 +387,38 @@ function setupPublicationsFilter() {
 
     if (!publicationsList || filterButtons.length === 0) return;
 
-    // 按年份整块筛选（每块内含 <ol>，序号由 HTML 列表自动生成）
-    const yearSections = Array.from(publicationsList.querySelectorAll('.year-section'));
+    // 按类别分块（Journal / Conference / To be Submitted），按年份筛选块内条目
+    const categorySections = Array.from(publicationsList.querySelectorAll('.year-section'));
 
     function filterByYear(year) {
         var i;
+        var j;
         var sec;
-        var sy;
-        if (year === 'all') {
-            for (i = 0; i < yearSections.length; i++) {
-                sec = yearSections[i];
+        var items;
+        var item;
+        var visible;
+        for (i = 0; i < categorySections.length; i++) {
+            sec = categorySections[i];
+            items = sec.querySelectorAll('.publication-item');
+            visible = 0;
+            for (j = 0; j < items.length; j++) {
+                item = items[j];
+                if (year === 'all' || item.getAttribute('data-year') === year) {
+                    item.style.display = '';
+                    item.classList.remove('year-hidden');
+                    visible++;
+                } else {
+                    item.style.display = 'none';
+                    item.classList.add('year-hidden');
+                }
+            }
+            // 该类别下没有匹配条目时隐藏整块（含标题）
+            if (visible > 0) {
                 sec.style.display = '';
                 sec.classList.remove('year-hidden');
-            }
-        } else {
-            for (i = 0; i < yearSections.length; i++) {
-                sec = yearSections[i];
-                sy = sec.getAttribute('data-year');
-                if (sy === year) {
-                    sec.style.display = '';
-                    sec.classList.remove('year-hidden');
-                } else {
-                    sec.style.display = 'none';
-                    sec.classList.add('year-hidden');
-                }
+            } else {
+                sec.style.display = 'none';
+                sec.classList.add('year-hidden');
             }
         }
     }

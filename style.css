@@ -1029,6 +1029,25 @@ body {
     content: "Under Review";
 }
 
+/* 有期刊/会议名时，venue 正文保持常规样式，仅状态徽标标红 */
+.publication-item[data-status="under-review"] .venue:not(:empty) {
+    color: inherit;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.venue .venue-rank {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* 已禁用的链接（审稿中条目） */
+.link-disabled {
+    color: rgb(183, 207, 243);
+    pointer-events: none;
+    cursor: default;
+}
+
 .pub-links {
     display: flex;
     gap: 8px;
@@ -1671,24 +1690,27 @@ section[id] {
     padding-bottom: 5px;
 }
 
+.service-intro {
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
 .service-list {
-    list-style: none;
-    padding: 0;
+    list-style-type: disc;
+    padding-left: 20px;
     margin: 0;
 }
 
 .service-list li {
-    padding: 8px 0;
-    padding-left: 20px;
-    position: relative;
-    color: #333;
+    margin-bottom: 10px;
     line-height: 1.5;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background-color 0.2s ease;
+    color: #000;
+    padding-left: 0;
 }
 
 .service-list li:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 .code {
     padding-top: 0.1rem;
@@ -2669,15 +2691,20 @@ section[id] {
         padding-bottom: 3px;
     }
 
+    .service-list {
+        padding-left: 18px;
+    }
+
     .service-list li {
-        padding: 6px 0;
-        padding-left: 15px;
+        margin-bottom: 8px;
         font-size: 16px;
         line-height: 1.4;
     }
 
-    .service-list li:hover {
-        padding-left: 18px;
+    .service-intro {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 8px;
     }
 
     h1 {
