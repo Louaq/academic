@@ -5,21 +5,39 @@
     <title>YangYang (杨杨) - Homepage</title>
     <description>YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision</description>
     <link>https://yangyang.wiki/</link>
-    <pubDate>Wed, 04 Mar 2026 00:00:00 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <pubDate>Sun, 23 Aug 2026 00:00:00 +0800</pubDate>
+    <lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0800</lastBuildDate>
     <generator>Custom RSS Generator</generator>
     <language>en-US</language>
     <webMaster>yangyang@mail.scuec.edu.cn (Yang Yang)</webMaster>
     <managingEditor>yangyang@mail.scuec.edu.cn (Yang Yang)</managingEditor>
-    <copyright>Copyright 2024-2025 Yang Yang</copyright>
+    <copyright>Copyright 2024-2026 Yang Yang</copyright>
     <image>
       <url>https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png</url>
       <title>YangYang (杨杨) - Homepage</title>
       <link>https://yangyang.wiki/</link>
     </image>
     <item>
+      <title>Ontology-Guided Lesion-Aware Vision-Language Alignment for Retinal Image-Text Retrieval</title>
+      <description>An ontology-guided, lesion-aware vision-language alignment framework for retinal image-text retrieval. Under review at IEEE Journal of Biomedical and Health Informatics (JBHI). Authors: Huang, X., Yang, Y., Lv, Y., et al.</description>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#publications</link>
+      <guid isPermaLink="false">publication-ontology-guided-retrieval-2026</guid>
+      <category>Publication</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
+    <item>
+      <title>Hi-ERMNet: Hierarchical Transformer with Edge Refinement for Retinal Vessel Segmentation</title>
+      <description>A hierarchical transformer with edge refinement for fine retinal vessel segmentation. Under review at the Asian Conference on Computer Vision (ACCV). Authors: Yang, Y., Huang, X., Zhang, X., et al.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#publications</link>
+      <guid isPermaLink="false">publication-edge-prior-transformer-2026</guid>
+      <category>Publication</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
+    <item>
       <title>Learning Symmetric Cross-Modal Representations via Feature Distillation and Contrastive Fusion for Brain Tumor Segmentation</title>
-      <description>A novel deep learning model for multimodal brain tumor segmentation using symmetric feature distillation and contrastive fusion. Currently under review. Authors: Yang Yang, Xiao Zhang, Jianlin Zhu, Pan Lai, Bo Yang, Meng Shi, Huazhu Fu, Yang Wen, Bin Sheng.</description>
+      <description>A deep learning model for multimodal brain tumor segmentation using symmetric feature distillation and contrastive fusion. Under review at Applied Soft Computing. Authors: Yang, Y., Huang, X., Zhang, X., et al.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
       <link>https://yangyang.wiki/#publications</link>
       <guid isPermaLink="false">publication-symmetric-cross-modal-2026</guid>
@@ -27,26 +45,26 @@
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>
     <item>
-      <title>Edge-Prior Guided Hierarchical Transformer for Fine Retinal Vessel Segmentation</title>
-      <description>An edge-prior guided hierarchical transformer network for fine retinal vessel segmentation. Submitted to IEEE Transactions on Medical Imaging (TMI), SCI-Q1. Authors: Yang Yang, Xuyan Huang, Xiao Zhang, Jianlin Zhu, Pan Lai, Bo Yang, Meng Shi, Zimao Li, Jun Tie, Yang Wen, Jin Huang, Bin Sheng.</description>
-      <pubDate>Mon, 01 Oct 2026 00:00:00 +0800</pubDate>
+      <title>Background as Parts: Sub-Background Modeling for Uncertainty-Aware Semi-Supervised Medical Image Segmentation</title>
+      <description>Sub-background modeling for uncertainty-aware semi-supervised medical image segmentation. Manuscript in preparation, to be submitted. Authors: Yang, Y., Huang, X., Zhang, X., et al.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
       <link>https://yangyang.wiki/#publications</link>
-      <guid isPermaLink="false">publication-edge-prior-transformer-2026</guid>
+      <guid isPermaLink="false">publication-background-as-parts-2026</guid>
       <category>Publication</category>
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>
     <item>
       <title>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</title>
-      <description>A novel deep learning model for rice pest and disease detection, accepted by The Visual Computer (TVC) journal (SCI-Q3, IF=2.9). Authors: Yang Yang, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu.</description>
+      <description>A deep learning model for rice pest and disease detection, accepted by The Visual Computer (TVC) journal (JCR-Q2, IF=3.4). Authors: Yang, Y., Hong, Y., Yu, W., et al.</description>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0800</pubDate>
-      <link>https://yangyang.wiki/#publications</link>
+      <link>https://yangyang.wiki/pdf/s00371-025-04225-9.pdf</link>
       <guid isPermaLink="false">publication-hsfpn-det-2025</guid>
       <category>Publication</category>
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>
     <item>
       <title>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</title>
-      <description>We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases. Published in Computer Graphics International Conference (CGI) 2024. Authors: Yang Yang, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang.</description>
+      <description>We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases. Published in Computer Graphics International Conference (CGI) 2024 (CCF-C). Authors: Yang, Y., Zhu, J., Yang, B., et al.</description>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0800</pubDate>
       <link>https://link.springer.com/chapter/10.1007/978-3-031-82024-3_8</link>
       <guid isPermaLink="false">publication-cgi2024</guid>
