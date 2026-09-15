@@ -587,8 +587,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 200);
     });
 });
-
-
-
-
-
