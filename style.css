@@ -8,29 +8,10 @@ html.smooth-scroll {
 }
 
 /* 顶部导航栏 */
-.top-nav {
-    color: #fff;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, padding 0.3s;
-}
-
-.nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: padding 0.3s;
-}
 
 .nav-title a {
     color: #2c5aa0;
+    font-size: 16.848px;
     font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
@@ -109,7 +90,7 @@ html.smooth-scroll {
 }
 
 .mobile-nav.active {
-    right: 0; /* 激活时滑入屏幕 */
+    right: 0;
 }
 
 /* 移动端菜单遮罩层 */
@@ -137,122 +118,6 @@ body.mobile-menu-open {
 }
 
 /* 移动端导航栏个人资料区域 */
-.mobile-nav-profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    position: relative;
-    min-height: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.mobile-nav-avatar {
-    flex-shrink: 0;
-    margin-bottom: 15px;
-    animation: fadeInScale 0.5s ease-out both;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.mobile-nav-avatar img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.mobile-nav-avatar img:hover {
-    transform: scale(1.05);
-}
-
-.mobile-nav-info {
-    color: #333;
-    text-align: center;
-    animation: fadeInUp 0.5s ease-out 0.2s both;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.mobile-nav-name {
-    font-weight: bold;
-    margin: 0 0 8px 0;
-    color: #222;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-}
-
-.mobile-nav-title {
-    margin: 0 0 4px 0;
-    color: #555;
-    line-height: 1.3;
-}
-
-.mobile-nav-affiliation {
-    margin: 5px;
-    color: #666;
-    line-height: 1.3;
-}
-
-.mobile-nav-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-    /* 移除移动端点击时的背景高亮效果 */
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.mobile-nav-close:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.mobile-nav-close i {
-    color: #333;
-}
-
-
 
 .mobile-nav a {
     display: flex;
@@ -354,95 +219,6 @@ body.mobile-menu-open {
     flex-shrink: 0;
 }
 
-/* 移动端导航栏样式 */
-@media (max-width: 900px) {
-    .top-nav {
-        background-color: #4b2e83;
-    }
-
-    .nav-container {
-        flex-direction: row;
-        padding: 8px 15px;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .nav-title {
-        flex-shrink: 0;
-    }
-
-    /* 隐藏桌面端导航链接 */
-    .desktop-nav {
-        display: none !important;
-    }
-
-    /* 显示汉堡菜单按钮 */
-    .mobile-menu-toggle {
-        display: flex !important;
-    }
-
-    /* 显示移动端侧边栏菜单 */
-    .mobile-nav {
-        display: block;
-    }
-
-    /* 显示移动端菜单遮罩层 */
-    .mobile-nav-overlay {
-        display: none;
-    }
-
-    /* 移动端个人资料区域样式调整 */
-    .mobile-nav-profile {
-        padding: 20px;
-        min-height: 0;
-    }
-
-    .mobile-nav-avatar img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .mobile-nav-avatar {
-        margin-bottom: 12px;
-    }
-
-    /* 移动端隐藏edu-logo */
-    .edu-logo {
-        display: none !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-container {
-        padding: 8px 10px;
-    }
-
-    /* 移动端侧边栏在小屏幕上的样式调整 */
-    .mobile-nav {
-        width: 250px;
-        right: -250px;
-    }
-
-    .mobile-nav a {
-        padding: 16px 18px;
-    }
-
-    .mobile-nav-profile {
-        padding: 20px 15px;
-        min-height: 0;
-    }
-
-    .mobile-nav-avatar img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .mobile-nav-avatar {
-        margin-bottom: 15px;
-    }
-}
-
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -457,7 +233,6 @@ body {
     background-color: #fff;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 /* 调整container顶部内边距，为固定导航栏腾出空间 */
 .container {
@@ -485,19 +260,6 @@ body {
     padding: 30px 20px;
     border-radius: 8px;
     min-height: 420px;
-}
-
-.profile-photo {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.profile-photo img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #ebebeb;
 }
 
 .profile-name {
@@ -530,24 +292,6 @@ body {
     max-width: 200px;
 }
 
-.profile-title {
-    color: #666;
-    margin: 5px 0;
-    text-align: center;
-}
-
-.profile-affiliation {
-    color: #666;
-    margin: 3px 0;
-    line-height: 1.4;
-    text-align: center;
-}
-
-.profile-email {
-    color: #666;
-    margin: 8px 0;
-}
-
 /* 个人信息链接列表样式 - 图一风格 */
 .profile-links {
     display: flex;
@@ -568,7 +312,7 @@ body {
     text-decoration: none;
     font-size: 16px;
     transition: color 0.2s ease;
-    gap: 10px;
+    gap: 8px;
 }
 
 .profile-link-item:hover {
@@ -576,104 +320,19 @@ body {
     text-decoration: none;
 }
 
+/* 图标统一为与文字同大小的深灰色 */
 .profile-link-item i {
-    width: 28px;
+    width: 20px;
     text-align: center;
-    font-size: 24px;
-    color: #333;
-}
-
-/* 特定图标的颜色 - hover时保持原色 */
-.profile-link-item.location-link {
-    color: #333;
-}
-
-.profile-link-item.location-link:hover {
-    color: #333;
-}
-
-.profile-link-item.location-link i {
-    color: #333;
-}
-
-.profile-link-item.location-link:hover i {
-    color: #333;
-}
-
-.profile-link-item.email-link i {
-    color: #ea4335;
-}
-
-.profile-link-item.email-link:hover i {
-    color: #ea4335;
-}
-
-.profile-link-item.cv-link i {
-    color: #d93025;
-}
-
-.profile-link-item.cv-link:hover i {
-    color: #d93025;
-}
-
-.profile-link-item.scholar-link i {
-    color: #4285f4;
-}
-
-.profile-link-item.scholar-link:hover i {
-    color: #4285f4;
-}
-
-.profile-link-item.github-link i {
-    color: #333;
-}
-
-.profile-link-item.github-link:hover i {
-    color: #333;
-}
-
-.profile-link-item.researchgate-link i {
-    color: #00d4aa;
-}
-
-.profile-link-item.researchgate-link:hover i {
-    color: #00d4aa;
-}
-
-.profile-link-item.orcid-link i {
-    color: #a6ce39;
-}
-
-.profile-link-item.orcid-link:hover i {
-    color: #a6ce39;
-}
-.profile-link-item.researchgate-link i {
-    color: #00d4aa;
-}
-
-.profile-link-item.researchgate-link:hover i {
-    color: #00d4aa;
-}
-.profile-link-item.openreview-link i {
-    color: #FF6B35;
-}
-
-.profile-link-item.openreview-link:hover i {
-    color: #FF6B35;
-}
-.profile-link-item.steam-link i {
-    color: #1b2838; /* Steam深蓝色 */
-}
-
-.profile-link-item.steam-link:hover i {
-    color: #1b2838;
+    font-size: 16px;
+    color: #494e52;
 }
 
 /* Right Content */
 .right-content {
     flex: 1;
     min-width: 0;
-    margin-left: 20px; /* 为时间线标签留出空间 */
+    margin-left: 20px;
 }
 
 .right-content section {
@@ -692,251 +351,10 @@ body {
     text-align: justify;
 }
 
-/* About Section 链接涂鸦下划线效果 */
+/* 正文与论文链接：仅保留下划线 */
 .pub-links a,
-.project-links a,
-.talk-links a,
-.about-section p a,
 .about-section a {
-    text-decoration: none !important;
-    color: #000 !important;
-    background-image: linear-gradient(rgba(255, 211, 30, 0.5), rgba(255, 211, 30, 0.5));
-    background-repeat: no-repeat;
-    background-size: 100% 40%;
-    background-position: 0 90%;
-    transition: background-size 200ms cubic-bezier(0, 0.8, 0.13, 1);
-    padding-bottom: 1px;
-}
-
-.pub-links a:hover,
-.project-links a:hover,
-.talk-links a:hover,
-.about-section p a:hover,
-.about-section a:hover {
-    text-decoration: none !important;
-    background-size: 100% 90%;
-}
-
-/* Notice Box - Contact Invitation */
-.notice-box {
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-    border-left: 4px solid #1A73E8;
-    border-radius: 0;
-    padding: 1px 10px;
-    position: relative;
-}
-
-.notice-box::before {
-    display: none;
-}
-
-.notice-box:hover {
-    box-shadow: none;
-    border-left-color: #1A73E8;
-}
-
-.notice-box .notice-header {
-    font-size: 16px;
-    font-weight: 500;
-    color: #1A73E8;
-    margin-bottom: 8px;
-    letter-spacing: 0.01em;
-    position: relative;
-    padding-left: 24px;
-}
-
-.notice-box .notice-header:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    background: #1A73E8;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='16' height='16' aria-hidden='true'%3E%3Cpath fill='var(--admonitions-color-tip)' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'%3E%3C/path%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='16' height='16' aria-hidden='true'%3E%3Cpath fill='var(--admonitions-color-tip)' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'%3E%3C/path%3E%3C/svg%3E");
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-}
-
-.notice-box .notice-content {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #000000;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-}
-
-.notice-box .notice-content .highlight-text {
-    color: #1A73E8;
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .notice-box {
-        padding: 14px 16px;
-        margin: 12px 0 6px 0;
-    }
-
-    .notice-box .notice-header {
-        font-size: 15px;
-        padding-left: 22px;
-    }
-
-    .notice-box .notice-header:before {
-        width: 14px;
-        height: 14px;
-    }
-
-    .notice-box .notice-content {
-        font-size: 16px;
-    }
-}
-/* 小屏幕设备优化：避免两端对齐导致的文字间距过大问题 */
-@media (max-width: 768px) {
-    .about-section p {
-        text-align: left;
-    }
-    
-    .research-description p {
-        text-align: left;
-    }
-    
-    .research-list li {
-        padding: 12px;
-        margin-bottom: 20px;
-    }
-    
-    .keyword-cloud {
-        gap: 8px;
-    }
-    
-    .keyword-tag {
-        font-size: 16px;
-        padding: 6px 12px;
-    }
-}
-
-/* Research Interests */
-.research-interests-section {
-    margin-bottom: 40px;
-}
-
-.research-interests-section h2 {
-    margin-bottom: 20px;
-}
-
-.research-description {
-    margin-bottom: 30px;
-}
-
-.research-description p {
-    line-height: 1.8;
-    color: #000;
-    text-align: justify;
-}
-
-.research-areas {
-    margin-bottom: 30px;
-}
-
-.research-areas h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #2c5aa0;
-    font-weight: 600;
-}
-
-.research-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.research-list li {
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.research-list li:hover {
-    box-shadow: 0 2px 8px rgba(44, 90, 160, 0.15);
-}
-
-.research-list li strong {
-    display: block;
-    font-size: 16px;
-    color: #2c5aa0;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.research-list li p {
-    margin: 0;
-    line-height: 1.6;
-    color: #000;
-}
-
-.research-keywords {
-    margin-top: 30px;
-}
-
-.research-keywords h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #2c5aa0;
-    font-weight: 600;
-}
-
-.keyword-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.keyword-tag {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #e8f0fe;
-    color: #2c5aa0;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: default;
-    border: 1px solid #d0e3ff;
-}
-
-.keyword-tag:hover {
-    background-color: #2c5aa0;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(44, 90, 160, 0.3);
-}
-
-.keyword-small {
-    font-size: 16px;
-    padding: 6px 12px;
-}
-
-.keyword-medium {
-    font-size: 16px;
-    padding: 8px 16px;
-}
-
-.keyword-large {
-    font-size: 16px;
-    padding: 10px 20px;
-    font-weight: 600;
+    text-decoration: underline;
 }
 
 /* News Section */
@@ -960,22 +378,52 @@ body {
     margin-bottom: 0;
 }
 
-.publications-year-list {
-    list-style-type: decimal;
-    list-style-position: outside;
-    margin: 0 0 0.2em 0;
-    padding-left: 2.5em;
+/* 分组之间留出间隔 */
+.year-section + .year-section {
+    margin-top: 2em;
 }
 
-.publications-year-list > .publication-item::marker {
-    font-weight: 600;
-    color: #333;
+.publications-year-list {
+    list-style: none;
+    margin: 0 0 0.2em 0;
+    padding-left: 0;
 }
 
 .publications-year-list > .publication-item {
-    display: list-item;
-    padding-left: 0.4em;
-    margin-bottom: 0.55em;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 1.2em;
+}
+
+/* 论文配图：左侧卡片，左上角 venue 徽标 */
+.pub-image {
+    position: relative;
+    flex: 0 0 260px;
+    aspect-ratio: 16 / 10;
+    background: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.pub-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+}
+
+.pub-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 2px 8px;
+    background: #00369f;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .publications-year-list > .publication-item:last-child {
@@ -1006,41 +454,6 @@ body {
     margin-bottom: 2px;
 }
 
-/* .first-author{
-    color: #000;
-} */
-
-.venue {
-    margin-bottom: 3px;
-
-}
-
-/* 无封面图时：审稿中条目在 .venue 显示状态（空 venue 用伪元素） */
-.publication-item[data-status="under-review"] .venue {
-    margin: 3px 0 4px 0;
-    color: #c00;
-    font-style: italic;
-    font-weight: bold;
-    line-height: 1.35;
-    min-height: 1.1em;
-}
-
-.publication-item[data-status="under-review"] .venue:empty::before {
-    content: "Under Review";
-}
-
-/* 有期刊/会议名时，venue 正文保持常规样式，仅状态徽标标红 */
-.publication-item[data-status="under-review"] .venue:not(:empty) {
-    color: inherit;
-    font-style: normal;
-    font-weight: normal;
-}
-
-.venue .venue-rank {
-    font-style: italic;
-    font-weight: bold;
-}
-
 /* 已禁用的链接（审稿中条目） */
 .link-disabled {
     color: rgb(183, 207, 243);
@@ -1066,334 +479,32 @@ body {
     color: #333;
 }
 
-.pub-links a {
-    color: #2c5aa0;
-    text-decoration: none;
-}
-
-/* Projects Section */
-.projects-list {
-    margin: 0;
-}
-
-.project-item {
-    padding-left: 15px;
-    display: flex;
-    gap: 20px;
-    margin-bottom: 2em;
-    align-items: center;
-}
-
-.project-item:last-child {
-    border-bottom: none;
-}
-
-.project-image {
-    flex: 0 0 350px;
-    width: 350px;
-    height: 192px;
-    align-self: center;
-    position: relative;
-}
-
-.project-image img:not(.badge-svg) {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 4px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    background-color: #f8f9fa;
-}
-
-.project-content {
-    flex: 1;
-}
-
-.project-content h3 {
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #000;
-    line-height: 1.3;
-}
-
-.project-description {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-.project-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.project-links a {
-    color: #2c5aa0;
-    text-decoration: none;
-}
-
-.project-links a:hover {
-    text-decoration: underline;
-}
-
-.project-links img {
-    vertical-align: middle;
-}
-
-/* Talks Section */
-.talks-list {
-    margin: 0;
-}
-
-.talk-item {
-    padding-left: 15px;
-    display: flex;
-    gap: 20px;
-    margin-bottom: 2em;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    align-items: center;
-}
-
-.talk-item:last-child {
-    border-bottom: none;
-}
-
-.talk-image {
-    flex: 0 0 350px;
-    width: 350px;
-    height: 192px;
-    align-self: center;
-    position: relative;
-}
-
-.talk-image img:not(.badge-svg) {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 4px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    background-color: #f8f9fa;
-}
-
-/* Badge styles for publications, projects, and talks */
-.image-badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    padding: 4px 8px;
-    border-radius: 0;
-    font-weight: 600;
-    font-size: 16px;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #2c5aa0;
-    /* 文字垂直对齐 */
-    display: flex;
-    align-items: center;
-}
-
-.badge-publication {
-    height: 18px;
-    background-color: #002D72;
-
-}
-
-/* 蓝色徽标样式 */
-.badge-blue {
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-    padding-top: 0.1rem;
-    position: absolute;
-    margin-top: .5em;
-    margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
-    font-size: 13px;
-    font-weight: bold;
-    z-index: 10;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* SVG Badge styles - 保留用于兼容 */
-.badge-svg {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    height: 20px;
-    width: auto;
-    max-width: 80px;
-    z-index: 10;
-    background: none !important;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    object-fit: contain;
-}
-
-/* Project部分的SVG badge特殊样式 - 稍微大一些 */
-.project-image .badge-svg {
-    height: 32px !important;
-    width: auto !important;
-    max-width: 95px !important;
-}
-
-.badge-project {
-    height: 18px;
-    background-color: #002D72;
-}
-
-.badge-talk {
-    height: 18px;
-    background-color: #002D72;
-}
-
-.talk-content {
-    flex: 1;
-}
-
-.talk-content h3 {
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #000;
-    line-height: 1.3;
-}
-
-.talk-venue {
-    margin-bottom: 4px;
-}
-
-.talk-description {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-.talk-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.talk-links a {
-    color: #2c5aa0;
-    text-decoration: none;
-}
-
-.talk-links a:hover {
-    text-decoration: underline;
-}
-
-
-
 /* Awards Section */
 .awards-section {
     margin-bottom: 30px;
 }
 
-.awards-section ul {
+.awards-section ul,
+.education-section ul {
     list-style-type: disc;
     padding-left: 20px;
     margin: 0;
 }
 
-.awards-section li {
+.awards-section li,
+.education-section li {
     margin-bottom: 10px;
     line-height: 1.5;
     color: #000;
     padding-left: 0;
 }
 
-.awards-section li:last-child {
+.awards-section li:last-child,
+.education-section li:last-child {
     margin-bottom: 0;
-}
-
-/* Education Section - Reference Style */
-.education-list {
-    margin: 0;
-    padding: 0;
-}
-
-.education-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-    padding: 15px 0;
-}
-
-.education-item:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.edu-logo {
-    flex-shrink: 0;
-    margin-right: 20px;
-}
-
-.university-logo {
-    width: 110px;
-    height: 110px;
-    object-fit: contain;
-}
-
-.edu-text-wrapper {
-    display: flex;
-    flex: 1;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.edu-content {
-    flex: 1;
-}
-
-.edu-institution {
-    color: #000;
-    margin-bottom: 4px;
-    font-size: 16px;
-}
-
-.edu-department {
-    color: #000;
-    margin-bottom: 4px;
-    font-size: 16px;
-}
-
-.edu-degree {
-    color: #000;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.edu-period {
-    flex-shrink: 0;
-    color: #000;
-    font-size: 16px;
-    text-align: right;
-    min-width: 120px;
-}
-
-/* 默认隐藏移动端日期 */
-.mobile-period {
-    display: none;
 }
 
 /* 显示桌面端日期 */
-.desktop-period {
-    display: block;
-}
 
 h2 {
     color: #000;
@@ -1419,34 +530,21 @@ strong {
 }
 
 /* Header Section */
-.main-header {
-    margin-bottom: 40px;
-}
-
-.header-content {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
 
 .profile-photo {
+    margin-bottom: 20px;
+    position: relative;
     flex: 0 0 230px;
 }
 
 .profile-photo img {
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ebebeb;
     width: 230px;
     height: 230px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-}
-.profile-content {
-    flex: 1;
-}
-
-.profile-content h1 {
-    margin-bottom: 5px;
-    color: #000;
 }
 
 .title {
@@ -1454,32 +552,9 @@ strong {
     color: #333;
 }
 
-.affiliation {
-    margin-bottom: 5px;
-    color: #333;
-    line-height: 1.4;
-}
-
 .email {
     margin-bottom: 10px;
     color: #333;
-}
-
-.social-links {
-    margin-bottom: 0;
-}
-
-.social-links a {
-    color: #673ab7;
-    text-decoration: none;
-    margin-right: 3px;
-}
-
-.bio-content {
-    margin-top: 0;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
 }
 
 .bio {
@@ -1488,47 +563,15 @@ strong {
     line-height: 1.5;
 }
 
-/* 小屏幕设备优化：避免两端对齐导致的文字间距过大问题 */
-@media (max-width: 768px) {
-    .bio {
-        text-align: left;
-    }
-}
-
-.looking {
-    color: #cc0000;
-    margin-bottom: 15px;
-
-}
-
-.student-note {
-    margin-bottom: 15px;
-
-}
-
 /* 为所有带id的section添加scroll-margin-top，精确控制滚动位置 */
 section[id] {
-    scroll-margin-top: 80px; /* 导航栏高度 + 间距 */
+    scroll-margin-top: 80px;
 }
 
 /* 新闻部分滚动样式 */
 .news-section {
     margin-bottom: 15px;
 
-}
-
-.news-list {
-    max-height: 190px;
-    /* 设置最大高度，超出部分显示滚动条 */
-    overflow-y: scroll;
-    /* 始终显示垂直滚动条 */
-    overflow-x: hidden;
-    /* 隐藏水平滚动 */
-    border-radius: 5px;
-    margin-left: 0;
-    white-space: normal;
-    /* 允许文本换行 */
-    padding-right: 5px;
 }
 
 /* 自定义滚动条样式 - Webkit浏览器 */
@@ -1541,38 +584,21 @@ section[id] {
     border-radius: 10px;
 }
 
-
 /* Firefox滚动条样式 */
 .news-list {
+    max-height: 190px;
+    /* 设置最大高度，超出部分显示滚动条 */
+    overflow-y: scroll;
+    /* 始终显示垂直滚动条 */
+    overflow-x: hidden;
+    /* 隐藏水平滚动 */
+    border-radius: 5px;
+    margin-left: 0;
+    white-space: normal;
+    /* 允许文本换行 */
+    padding-right: 5px;
     scrollbar-width: thin;
 }
-
-.news-item {
-    display: flex;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-}
-
-.news-item:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.news-date {
-    flex: 0 0 auto;
-    padding-right: 5px;
-    /* 添加少量右内边距 */
-}
-
-.news-content {
-    flex: 1;
-    padding-right: 10px;
-    margin-left: 0;
-    /* 移除左边距 */
-    overflow: visible;
-    /* 移除单独的水平滚动 */
-}
-
 
 /* Publications Section */
 .publications-section {
@@ -1593,125 +619,12 @@ section[id] {
     margin-top: 10px;
 }
 
-/* Publications 过滤头部 - 包含 corresponding author */
-.pub-filter-header {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-/* 年份筛选按钮容器 */
-.year-filter-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 0;
-}
-.year-filter-buttons button {
-    font-family: "Trebuchet MS",Helvetica,sans-serif;
-
-}
-/* 年份筛选隐藏类 */
-.year-hidden {
-    display: none !important;
-}
-
-/* 优化年份筛选元素的渲染性能 */
-.year-header,
-.year-section,
-.publication-item {
-    will-change: display;
-    contain: layout style;
-}
-
-/* 年份筛选按钮样式 */
-.year-filter-btn {
-    padding: 5px 14px;
-    border: none;
-    background-color: transparent;
-    color: #666;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 400;
-    outline: none;
-}
-
-.year-filter-btn:hover {
-    color: #2C5AA0;
-}
-
-.year-filter-btn.active {
-    color: #2C5AA0;
-    border-bottom: 2px solid #2C5AA0;
-    border-radius: 0;
-}
-/* Corresponding Author Note */
-.corresponding-author-note {
-    font-size: 16.848px;
-    color: #666;
-    font-style: italic;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-}
-
 /* Education Section */
 .education-section {
     margin-bottom: 30px;
 }
 
 /* Services Section */
-.services-section {
-    margin-bottom: 30px;
-}
-
-.services-content {
-    margin-top: 20px;
-}
-
-.service-category {
-    margin-bottom: 25px;
-}
-
-.service-category:last-child {
-    margin-bottom: 0;
-}
-
-.service-category h3 {
-    color: #2c5aa0;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    border-bottom: 2px solid #e8f0fe;
-    padding-bottom: 5px;
-}
-
-.service-intro {
-    color: #000;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.service-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.service-list li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: #000;
-    padding-left: 0;
-}
-
-.service-list li:last-child {
-    margin-bottom: 0;
-}
 .code {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
@@ -1724,59 +637,14 @@ section[id] {
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.125)
 }
-/* Visitor Map Section */
-.visitor-map-section {
-    margin-bottom: 30px;
-}
-
-.visitor-map-section h2 {
-    margin-bottom: 15px;
-}
-
-.visitor-map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 0;
-    overflow: hidden;
-}
-
-.visitor-map-container a {
-    display: block !important;
-    margin: 0 auto !important;
-}
-
-.visitor-map-container a img,
-.visitor-map-container img {
-    display: block !important;
-    border: none !important;
-    max-width: 100% !important;
-}
-
-/* 移动端隐藏访客地图 */
-@media (max-width: 900px) {
-    .visitor-map-section {
-        display: none !important;
-    }
-}
 
 /* Footer */
 .main-footer {
     width: 100%;
+    color: #bdc1c4;
     background-color: #f2f3f3;
     border-top: 1px solid #e0e0e0;
     padding: 20px 0;
-}
-
-
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
 }
 
 .footer-follow {
@@ -1786,31 +654,6 @@ section[id] {
     justify-content: center;
     gap: 10px;
     color: #666;
-}
-
-.footer-links a {
-    color: #666;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-    color: #333;
-}
-
-.footer-info {
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-}
-
-.footer-info p {
-    color: #000;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.5;
-    max-width: 100%;
-    word-wrap: break-word;
 }
 
 /* AcademicPages Footer Styles */
@@ -1831,40 +674,6 @@ section[id] {
 
 .footer-left {
     flex: 1;
-}
-
-.footer-right {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    min-width: 60px; /* 确保最小宽度以容纳地球仪 */
-}
-
-/* 访客地球仪样式 - 页脚右侧 */
-.visitor-counter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px; /* 限制高度与页脚适配 */
-    overflow: hidden; /* 防止溢出 */
-}
-
-/* 地球仪大小控制 - 针对clstr_globe */
-.visitor-counter canvas,
-.visitor-counter div[id*="clustrmaps"],
-.visitor-counter iframe,
-.visitor-counter object,
-.visitor-counter embed {
-    max-width: 50px !important;
-    max-height: 50px !important;
-    width: 50px !important;
-    height: 50px !important;
-    transform: scale(0.8);
-    transform-origin: center;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 /* Custom footer snippets */
@@ -1898,16 +707,6 @@ section[id] {
     color: #666;
 }
 
-.page__footer-follow .social-icons a {
-    color: #666;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.3s ease;
-}
-
-
 .page__footer-follow .social-icons i {
     font-size: 16px;
 }
@@ -1920,8 +719,451 @@ section[id] {
     line-height: 1.4;
 }
 
-/* 响应式页脚布局 */
+/* 确保导航栏在所有情况下都保持深蓝色背景 */
+.top-nav,
+.top-nav.scrolled {
+    background-color: #fff !important;
+}
+
+/* 回到顶部按钮样式 */
+.back-to-top {
+    position: fixed;
+    bottom: -100px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #f8f8f8;
+    color: #2C5AA0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 18px;
+    transition: bottom 200ms ease-in-out;
+}
+
+.back-to-top.visible {
+    bottom: 30px;
+}
+
+.back-to-top:hover {
+    background-color: #e8e8e8;
+    color: #1a4480;
+}
+
+.back-to-top:active {
+    background-color: #e0e0e0;
+}
+
+.back-to-top:focus {
+    outline: 1px solid #2C5AA0;
+    outline-offset: 1px;
+}
+
+/* 个人资料内容样式更新 */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.15);
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.social-icons a i {
+    font-size: 24px;
+    transition: all 0.1s ease;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.3);
+}
+
+/* 邮件复制成功提示 */
+.email-copy-toast {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background-color: #000;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.email-copy-toast::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #000;
+}
+
+.email-copy-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+/* Align top-nav height with GitHub Corner */
+.top-nav {
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, padding 0.3s; height: 64px; }
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding 0.3s; height: 64px; padding: 0 20px; }
+
+/* Hide GitHub Corner on mobile */
+.fa-rss-square{
+    color: #fa9b39;
+}
+
+/* 确保组织链接文字不换行 */
+.page__footer-follow .social-icons a {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* 移除页脚FEED图标的缩放动画 */
+.page__footer-follow .social-icons a:hover {
+    transform: none !important;
+}
+
+.page__footer-follow .social-icons a:hover i {
+    transform: none !important;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+        padding: 80px 25px 20px;
+    }
+
+    .main-layout {
+        gap: 40px;
+    }
+
+    .left-sidebar {
+        flex: 0 0 280px;
+    }
+
+    .profile-photo img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+
+    /* 中等屏幕年份标题样式 */
+    .year-header {
+        text-align: left;
+    }
+
+    .year-header h3 {
+        font-size: 1.25em;
+    }
+
+    .pub-content {
+        flex: 1; /* 与左侧配图并排，占满剩余宽度 */
+        margin: 0; /* 移除所有margin */
+        padding: 0; /* 移除所有padding */
+        box-sizing: border-box; /* 确保box-sizing一致 */
+        text-align: left;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .nav-title {
+        flex-shrink: 0;
+    }
+
+    /* 隐藏桌面端导航链接 */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* 显示汉堡菜单按钮 */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* 显示移动端侧边栏菜单 */
+    .mobile-nav {
+        display: block;
+    }
+
+    /* 显示移动端菜单遮罩层 */
+    .mobile-nav-overlay {
+        display: none;
+    }
+
+    .main-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-sidebar {
+        flex: none;
+        position: static;
+        width: 100%;
+    }
+
+    .profile-section {
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 0;
+        text-align: center;
+    }
+
+    .profile-links {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-link-item > span:not(.email-copy-toast) {
+        display: none;
+    }
+
+    .profile-link-item {
+        justify-content: center;
+    }
+
+    .profile-link-item i {
+        width: 28px;
+        font-size: 24px;
+    }
+
+    .right-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* 移动端年份标题样式 */
+    .year-header {
+        text-align: left;
+    }
+
+    .pub-content {
+        text-align: left;
+    }
+    .news-list {
+        max-height: 350px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-radius: 5px;
+        margin-left: 0;
+        white-space: normal;
+        padding-right: 5px;
+    }
+
+    .top-nav,
+    .top-nav.scrolled {
+        background-color: #fff;
+    }
+
+    .container {
+        padding: 60px 15px 20px;
+    }
+
+    /* 移动端布局调整 */
+
+    .profile-photo {
+        margin: 0;
+        width: 230px;
+    }
+
+    .profile-photo img {
+        width: 230px;
+        height: 230px;
+        margin: 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .title,
+    .email {
+        text-align: left;
+    }
+
+    .bio {
+        text-align: left;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        padding-left: 0;
+    }
+
+    .publications-year-list > .publication-item {
+        text-align: left;
+    }
+
+    .year-header h3 {
+        font-size: 1.2em;
+    }
+
+    /* Services Section Mobile Styles */
+
+    h1 {
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    h2 {
+        margin: 20px 0 8px 0;
+        line-height: 1.2;
+    }
+
+    h3 {
+        line-height: 1.3;
+    }
+
+    .footer-follow {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    /* 移动端学校图标调整 */
+    .bio img[src*="icon-title"] {
+        width: 18px;
+        height: 18px;
+        margin-left: 3px;
+    }
+
+    .bio img[src*="scuec.png"] {
+        width: 65px;
+        height: 25px;
+        margin-left: 3px;
+    }
+
+    .pub-links {
+        gap: 8px;
+    }
+
+    .pub-links a {
+        margin-right: 8px;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .pub-links a:hover {
+        background-color: transparent !important;
+    }
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 优化文本选择 */
+    p,
+    h1,
+    h2,
+    h3 {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+
+    /* 移动端页脚居中对齐 */
+    .main-footer {
+        display: flex;
+        align-items: center; /* vertical centering */
+        justify-content: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    .social-icons {
+        flex-wrap: wrap;
+        gap: 1px;
+    }
+
+    .social-icons a {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+    }
+
+    .social-icons a i {
+        font-size: 24px;
+    }
+    .top-nav {
+        background-color: #4b2e83; height: 56px; }
+    .nav-container {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center; height: 56px; padding: 0 15px; }
+	.github-corner { display: none; }
+}
+
 @media (max-width: 768px) {
+    /* 小屏：配图在上，文字在下 */
+    .publications-year-list > .publication-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .pub-image {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 360px;
+    }
+    .about-section p {
+        text-align: left;
+    }
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
@@ -1931,25 +1173,6 @@ section[id] {
     .footer-left {
         text-align: left;
         order: 1;
-    }
-    
-    .footer-right {
-        order: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .visitor-counter {
-        display: none !important; /* 移动端隐藏访客地球仪 */
-    }
-    
-    .visitor-counter canvas,
-    .visitor-counter div[id*="clustrmaps"],
-    .visitor-counter iframe,
-    .visitor-counter object,
-    .visitor-counter embed {
-        display: none !important; /* 移动端隐藏所有地球仪元素 */
     }
     .page__footer {
         padding: 0 15px;
@@ -2010,9 +1233,53 @@ section[id] {
         line-height: 1.4;
         text-align: left;
     }
+    /* 特殊处理长文本内容 */
+    .bio {
+        text-align: left;
+        text-align-last: left;
+    }
+
+    /* 强制保持个人资料信息居中对齐 */
+    .profile-section,
+    .profile-section * {
+        text-align: center;
+    }
+    
+    /* 姓名居中对齐，描述和链接列表左对齐 */
+    .profile-name {
+        text-align: center;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: visible;
+    }
+    
+    .profile-bio,
+    .profile-links {
+        text-align: left !important;
+    }
+
+    /* 移动端隐藏返回顶部按钮和暗亮模式切换按钮 */
+    .back-to-top {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .top-nav { height: 48px; }
+    .nav-container { height: 48px; padding: 0 10px; }
 }
 
 @media (max-width: 480px) {
+
+    /* 移动端侧边栏在小屏幕上的样式调整 */
+    .mobile-nav {
+        width: 250px;
+        right: -250px;
+    }
+
+    .mobile-nav a {
+        padding: 16px 18px;
+    }
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
@@ -2022,25 +1289,6 @@ section[id] {
     .footer-left {
         text-align: left;
         order: 1;
-    }
-    
-    .footer-right {
-        order: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .visitor-counter {
-        display: none !important; /* 移动端隐藏访客地球仪 */
-    }
-    
-    .visitor-counter canvas,
-    .visitor-counter div[id*="clustrmaps"],
-    .visitor-counter iframe,
-    .visitor-counter object,
-    .visitor-counter embed {
-        display: none !important; /* 移动端隐藏所有地球仪元素 */
     }
     
     .page__footer {
@@ -2100,759 +1348,9 @@ section[id] {
         font-size: 16px;
         line-height: 1.4;
     }
-}
-
-/* Citation Modal */
-.citation-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: auto;
-}
-
-.citation-modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 15px;
-    border: 1px solid #ddd;
-    width: 80%;
-    max-width: 700px;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
-
-.citation-close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: #666;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.citation-close:hover {
-    color: #000;
-}
-
-.citation-text-container {
-    background-color: #f8f8f8;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 5px;
-    border: 1px solid #e0e0e0;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#citation-text {
-    font-family: "Trebuchet MS",Helvetica,sans-serif;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin: 0;
-    line-height: 1.5;
-}
-
-.copy-citation-btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.copy-citation-btn:active {
-    background-color: #3e8e41;
-}
-
-.copy-citation-link {
-    display: inline-block;
-    color: #673ab7;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.copy-citation-link:hover {
-    color: #5e35b1;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 95%;
-        padding: 80px 25px 20px;
-    }
-
-    .main-layout {
-        gap: 40px;
-    }
-
-    .left-sidebar {
-        flex: 0 0 280px;
-    }
-
-    .profile-photo img {
-        width: 140px;
-        height: 140px;
-    }
-
-    /* 隐藏 projects、talks 部分的图片 */
-    .project-image,
-    .talk-image {
-        display: none;
-    }
-}
-
-/* 特定宽度820px左右的布局调整 */
-@media (max-width: 900px) and (min-width: 769px) {
-    .project-item,
-    .talk-item {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-bottom: 10px;
-        align-items: stretch; /* 确保子元素拉伸到相同宽度 */
-        text-align: left;
-    }
-
-    /* 中等屏幕年份标题样式 */
-    .year-header {
-        text-align: left;
-    }
-
-    .year-header h3 {
-        font-size: 1.25em;
-    }
-
-    .project-image,
-    .talk-image {
-        width: 100%;
-        height: auto;
-        flex: none; /* 防止flex收缩 */
-        margin: 0; /* 移除所有margin */
-        padding: 0; /* 移除所有padding */
-        box-sizing: border-box; /* 确保box-sizing一致 */
-    }
-
-    .project-image img:not(.badge-svg),
-    .talk-image img:not(.badge-svg) {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
-        border-radius: 4px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
-        display: block; /* 移除img默认的inline间距 */
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        background-color: #f8f9fa;
-    }
-
-    .pub-content,
-    .project-content,
-    .talk-content {
-        width: 100%;
-        flex: none; /* 防止flex收缩 */
-        margin: 0; /* 移除所有margin */
-        padding: 0; /* 移除所有padding */
-        box-sizing: border-box; /* 确保box-sizing一致 */
-        text-align: left;
-    }
-}
-
-
-@media (max-width: 900px) {
-    /* 移动端隐藏访客地球仪 */
-    .visitor-counter {
-        display: none !important;
-    }
-    
-    .visitor-counter canvas,
-    .visitor-counter div[id*="clustrmaps"],
-    .visitor-counter iframe,
-    .visitor-counter object,
-    .visitor-counter embed {
-        display: none !important;
-    }
-    
-    .main-layout {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .left-sidebar {
-        flex: none;
-        position: static;
-        width: 100%;
-    }
-
-    .profile-section {
-        padding: 20px 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 0;
-        text-align: center;
-    }
-
-    .profile-photo img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .profile-links {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .profile-link-item > span:not(.email-copy-toast) {
-        display: none;
-    }
-
-    .profile-link-item {
-        justify-content: center;
-    }
-
-    .profile-link-item i {
-        width: 28px;
-        font-size: 24px;
-    }
-    /* 移动端隐藏 location-link */
-    .profile-link-item.location-link {
-        display: none;
-    }
-
-    .right-content {
-        width: 100%;
-        margin-left: 0; /* 移动端取消左边距 */
-    }
-
-    .project-item,
-    .talk-item {
-        gap: 15px;
-    }
-
-    .publications-year-list > .publication-item {
-        text-align: left;
-    }
-
-    .project-item,
-    .talk-item {
-        text-align: center;
-    }
-
-    /* 移动端年份标题样式 */
-    .year-header {
-        text-align: left;
-    }
-
-    .year-header h3 {
-        font-size: 1.25em;
-    }
-
-    .project-image,
-    .talk-image {
-        flex: none;
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    .project-image img:not(.badge-svg),
-    .talk-image img:not(.badge-svg) {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 3/2;
-        object-fit: contain;
-        object-position: center;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        background-color: #f8f9fa;
-    }
-
-    .pub-content,
-    .project-content,
-    .talk-content {
-        text-align: left;
-    }
-
-    .education-list {
-        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
-    }
-
-    .education-list::before {
-        left: 10px;
-    }
-
-    .education-item {
-        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
-    }
-
-    .education-item::before {
-        left: 4px;
-        top: 50%;
-        transform: translateY(-50%); /* 垂直居中 */
-        width: 10px;
-        height: 10px;
-    }
-
-    .edu-period {
-        position: static;
-        width: auto;
-        text-align: left;
-        margin-bottom: 8px;
-        margin-left: 0; /* 确保与Education标题对齐 */
-        display: inline-block;
-    }
-
-    .edu-info-container {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        gap: 15px;
-    }
-    .news-list {
-        max-height: 350px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        border-radius: 5px;
-        margin-left: 0;
-        white-space: normal;
-        padding-right: 5px;
-    }
-
-    .news-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 8px;
-        line-height: 1.4;
-    }
-
-    .news-item::before {
-        content: '•';
-        font-weight: bold;
-        margin-right: 8px;
-        flex-shrink: 0;
-    }
-
-    .news-date {
-        flex: 0 0 auto;
-        margin-right: 8px;
-        white-space: nowrap;
-    }
-
-    .news-content {
-        flex: 1;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-}
-
-@media (max-width: 900px) {
-
-    .top-nav,
-    .top-nav.scrolled {
-        background-color: #fff;
-    }
-
-    .container {
-        padding: 60px 15px 20px;
-    }
-
-    /* 移动端布局调整 */
-    .pub-filter-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    /* 移动端年份筛选按钮样式 */
-    .year-filter-buttons {
-        justify-content: flex-start;
-    }
-
-    .year-filter-btn {
-        padding: 5px 14px;
-        font-size: 16px;
-    }
-
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .profile-photo {
-        margin: 0;
-        width: 230px;
-    }
-
-    .profile-photo img {
-        width: 230px;
-        height: 230px;
-        margin: 0;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-    }
-
-    .profile-content {
-        text-align: left;
-        margin-top: 10px;
-        padding-left: 0;
-    }
-
-    .title,
-    .affiliation,
-    .email {
-        text-align: left;
-    }
-
-    .social-links {
-        text-align: left;
-        margin-bottom: 15px;
-    }
-
-    .bio-content {
-        margin-top: 20px;
-        padding-left: 0;
-    }
-
-    .bio,
-    .looking,
-    .student-note {
-        text-align: left;
-        line-height: 1.5;
-        margin-bottom: 10px;
-        padding-left: 0;
-    }
-
-    .research-interests {
-        text-align: left;
-        line-height: 1.5;
-        margin-bottom: 10px;
-    }
-
-    .contact-links {
-        line-height: 1.5;
-        text-align: center;
-        margin-bottom: 15px;
-        order: 3;
-    }
-
-    .contact-links a {
-        margin-right: 8px;
-    }
-
-    .project-item {
-        gap: 12px;
-        margin-bottom: 10px;
-    }
-
-    .publications-year-list > .publication-item {
-        margin-bottom: 3px;
-    }
-
-    .project-item:last-child {
-        border-bottom: none;
-    }
-
-
-    .year-header h3 {
-        font-size: 1.2em;
-    }
-
-    .research-projects-section .projects-list {
-        margin-left: 20px;
-    }
-
-    .project-image,
-    .talk-image {
-        align-self: center;
-        flex: none;
-        position: relative;
-        margin-bottom: 10px;
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        aspect-ratio: 350/192;
-    }
-
-    .project-image img:not(.badge-svg),
-    .talk-image img:not(.badge-svg) {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.12);
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        background-color: #f8f9fa;
-    }
-
-    .pub-badge,
-    .project-badge {
-        padding: 3px 6px;
-    }
-
-    .education-item {
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 20px;
-        padding: 15px 0;
-        gap: 12px;
-    }
-
-    .edu-logo {
-        display: none !important;
-    }
-
-    .university-logo {
-        width: 32px;
-        height: 32px;
-    }
-
-    .edu-text-wrapper {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .edu-content {
-        margin-right: 0;
-        margin-bottom: 0;
-        margin-top: 0;
-        flex: 1;
-    }
-
-    .edu-institution {
-        font-size: 16px;
-        margin-bottom: 2px;
-    }
-
-    .edu-department {
-        font-size: 12px;
-        margin-bottom: 2px;
-    }
-
-    .edu-degree {
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-
-    .edu-period.desktop-period {
-        display: none;
-    }
-
-    .edu-period.mobile-period {
-        display: block;
-        text-align: left;
-        min-width: auto;
-        margin-bottom: 0;
-        margin-left: 0;
-        color: #000;
-        font-weight: normal;
-        font-size: 14.4px;
-        margin-top: 4px;
-    }
-
-    .edu-content h3 {
-        margin-top: 0;
-        margin-bottom: 1px;
-        line-height: 1.2;
-    }
-
-    .edu-content p {
-        margin-bottom: 1px;
-    }
-
-    /* Services Section Mobile Styles */
-    .services-section {
-        margin-bottom: 25px;
-    }
-
-    .service-category {
-        margin-bottom: 20px;
-    }
-
-    .service-category h3 {
-        font-size: 16px;
-        margin-bottom: 10px;
-        padding-bottom: 3px;
-    }
-
-    .service-list {
-        padding-left: 18px;
-    }
-
-    .service-list li {
-        margin-bottom: 8px;
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    .service-intro {
-        font-size: 16px;
-        line-height: 1.4;
-        margin-bottom: 8px;
-    }
-
-    h1 {
-        margin-bottom: 10px;
-        line-height: 1.2;
-    }
-
-    h2 {
-        margin: 20px 0 8px 0;
-        line-height: 1.2;
-    }
-
-    h3 {
-        line-height: 1.3;
-    }
-
-    .news-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 8px;
-        line-height: 1.4;
-    }
-
-    .news-item::before {
-        content: '•';
-        font-weight: bold;
-        margin-right: 8px;
-        flex-shrink: 0;
-    }
-
-    .news-date {
-        flex: 0 0 auto;
-        margin-right: 8px;
-        white-space: nowrap;
-    }
-
-    .news-content {
-        flex: 1;
-        line-height: 1.3;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-
-    .pub-links a,
-    .project-links a {
-        margin-right: 8px;
-    }
-
-    .citation-modal-content {
-        margin: 15% auto;
-        width: 90%;
-        padding: 20px;
-    }
-
-    .citation-text-container {
-        max-height: 250px;
-        padding: 12px;
-    }
-
-
-    /* 移动端地球仪样式通过上方的@media queries控制 */
-
-    .footer-links {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .footer-follow {
-        gap: 8px;
-        justify-content: center;
-    }
-
-    /* 中等屏幕页脚优化 */
-    .main-footer {
-        display: flex;
-        align-items: center; /* vertical centering */
-        justify-content: center;
-        padding: 20px 15px;
-        text-align: center !important;
-    }
-
-    .footer-info {
-        text-align: center !important;
-        margin-top: 15px;
-    }
-
-    .footer-info p {
-        text-align: center !important;
-        font-size: 13px;
-        line-height: 1.5;
-        margin: 0 auto;
-        word-wrap: break-word;
-    }
-
-    /* 移动端学校图标调整 */
-    .bio img[src*="icon-title"] {
-        width: 18px !important;
-        height: 18px !important;
-        margin-left: 3px !important;
-    }
-
-    .bio img[src*="scuec.png"] {
-        width: 65px !important;
-        height: 25px !important;
-        margin-left: 3px !important;
-    }
-
-    .contact-links a {
-        padding: 0 !important;
-        margin: 0 8px 0 0 !important;
-        background-color: transparent !important;
-        border-radius: 0 !important;
-    }
-
-    .contact-links a:hover {
-        background-color: transparent !important;
-    }
-
-    .pub-links {
-        gap: 8px;
-    }
-
-    .pub-links a,
-    .project-links a {
-        padding: 0 !important;
-        margin: 0 !important;
-        background-color: transparent !important;
-        border-radius: 0 !important;
-    }
-
-    .pub-links a:hover,
-    .project-links a:hover {
-        background-color: transparent !important;
-    }
-
-
-    .news-item {
-        background-color: transparent !important;
-        border-radius: 0 !important;
-        padding: 0 !important;
-    }
-}
-
-@media (max-width: 480px) {
     .container {
         padding: 50px 10px 15px;
     }
-
 
     h1 {
         line-height: 1.1;
@@ -2911,10 +1409,6 @@ section[id] {
         width: 28px;
         font-size: 28px;
     }
-    /* 移动端隐藏 location-link */
-    .profile-link-item.location-link {
-        display: none;
-    }
 
     .profile-photo img {
         width: 200px;
@@ -2922,105 +1416,16 @@ section[id] {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.3s ease;
     }
-    
-    .profile-content h1 {
-        margin-bottom: 5px;
-    }
 
-
-    .bio,
-    .looking,
-    .student-note {
-        line-height: 1.4;
-        text-align: left;
-    }
-
-    .contact-links {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .bio,
-    .research-interests {
+    .bio {
         line-height: 1.4;
         margin-bottom: 8px;
         text-align: left;
-    }
-
-    .contact-links a {
-        margin-right: 6px;
     }
 
     .news-list,
-    .publications-list,
-    .research-projects-section .projects-list,
-    .projects-list {
+    .publications-list {
         margin-left: 5px;
-    }
-
-    .education-list {
-        margin-left: 0; /* 教育列表与标题对齐 */
-    }
-
-    .news-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 8px;
-        line-height: 1.4;
-    }
-
-    .news-item::before {
-        content: '•';
-        font-weight: bold;
-        margin-right: 6px;
-        flex-shrink: 0;
-        font-size: 14.4px;
-    }
-
-    .news-date {
-        flex: 0 0 auto;
-        margin-right: 6px;
-        white-space: nowrap;
-        font-size: 14.4px;
-    }
-
-    .news-content {
-        flex: 1;
-        line-height: 1.2;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        font-size: 14.4px;
-    }
-
-    .project-image,
-    .talk-image {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-    }
-
-    .project-image img:not(.badge-svg),
-    .talk-image img:not(.badge-svg) {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.12);
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        background-color: #f8f9fa;
-    }
-
-    .pub-badge,
-    .project-badge {
-        padding: 2px 5px;
-    }
-
-    .project-content {
-        padding: 8px 0;
-        text-align: left;
-        display: block;
     }
 
     .publications-section .pub-content {
@@ -3033,111 +1438,30 @@ section[id] {
         margin-bottom: 2px;
     }
 
-    .venue {
-        margin-bottom: 3px;
-        line-height: 1.35;
-    }
-
-    .pub-description,
-    .project-content p {
-        line-height: 1.4;
-    }
-
-    .pub-links {
-        gap: 6px;
-    }
-
-    .pub-links a,
-    .project-links a {
+    .pub-links a {
         margin-right: 0;
         line-height: 1.4;
     }
-
-    .education-item {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 15px;
-        padding: 10px 0;
-        margin-left: 0;
-    }
-
-    .edu-logo {
-        display: none !important;
-    }
-
-    .edu-text-wrapper {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .edu-content {
-        margin-right: 0;
-        margin-bottom: 6px;
-        margin-top: 0;
-        padding: 0;
-    }
-
-    .edu-period {
-        text-align: left;
-        min-width: auto;
-        margin-bottom: 0;
-        margin-left: 0;
-        display: block;
-    }
-
-    /* 移动端地球仪样式已在上方@media queries中定义 */
 
     /* 小屏幕页脚优化 */
     .main-footer {
         display: flex;
         align-items: center; /* vertical centering */
         justify-content: center;
-        padding: 15px 5px;
         text-align: center;
-    }
-
-    .footer-info {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .footer-info p {
-        text-align: center;
-        font-size: 14.4px;
-        line-height: 1.5;
-        margin: 0 auto;
-        padding: 0 5px;
-        word-wrap: break-word;
-        hyphens: auto;
     }
 
     /* 移动端学校图标调整 */
     .bio img[src*="icon-title"] {
-        width: 15px !important;
-        height: 15px !important;
-        margin-left: 2px !important;
+        width: 15px;
+        height: 15px;
+        margin-left: 2px;
     }
 
     .bio img[src*="scuec.png"] {
-        width: 60px !important;
-        height: 20px !important;
-        margin-left: 2px !important;
-    }
-
-    .citation-modal-content {
-        margin: 20% auto;
-        width: 95%;
-        padding: 15px;
-    }
-
-    .citation-text-container {
-        max-height: 200px;
-        padding: 10px;
-    }
-
-    .citation-close {
-        top: 10px;
-        right: 15px;
+        width: 60px;
+        height: 20px;
+        margin-left: 2px;
     }
 
     /* 改善publication内容在小屏幕上的显示 */
@@ -3152,369 +1476,6 @@ section[id] {
         margin-top: 3px;
         gap: 6px;
     }
-}
-
-/* Print Styles */
-@media print {
-    .visitor-counter {
-        display: none;
-    }
-
-    .citation-modal {
-        display: none;
-    }
-
-    a {
-        color: #000;
-        text-decoration: underline;
-    }
-}
-
-/* 滚动和交互体验优化 */
-@media (max-width: 900px) {
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* 优化文本选择 */
-    p,
-    h1,
-    h2,
-    h3 {
-        -webkit-user-select: text;
-        -moz-user-select: text;
-        -ms-user-select: text;
-        user-select: text;
-    }
-
-    /* 移动端地球仪样式通过上方@media queries控制 */
-
-    /* 移动端页脚居中对齐 */
-    .main-footer {
-        text-align: center !important;
-        padding: 20px 10px;
-    }
-
-    .footer-info {
-        text-align: center !important;
-        margin-top: 15px;
-    }
-
-    .footer-info p {
-        text-align: center !important;
-        margin: 0 auto;
-        max-width: 100%;
-        word-wrap: break-word;
-        line-height: 1.6;
-    }
-}
-
-/* 确保导航栏在所有情况下都保持深蓝色背景 */
-.top-nav,
-.top-nav.scrolled {
-    background-color: #fff !important;
-}
-
-/* 会议或期刊等级样式 */
-.venue-rank {
-    display: inline-block;
-    color: red;
-    margin: 0 5px;
-}
-
-/* 暗亮模式切换按钮样式 */
-.theme-toggle {
-    position: fixed;
-    bottom: 80px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: #f8f8f8;
-    color: #2C5AA0;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.theme-toggle svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* 回到顶部按钮样式 */
-.back-to-top {
-    position: fixed;
-    bottom: -100px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: #f8f8f8;
-    color: #2C5AA0;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 18px;
-    transition: bottom 200ms ease-in-out;
-}
-
-.back-to-top.visible {
-    bottom: 30px;
-}
-
-.back-to-top:hover {
-    background-color: #e8e8e8;
-    color: #1a4480;
-}
-
-.back-to-top:active {
-    background-color: #e0e0e0;
-}
-
-.back-to-top:focus {
-    outline: 1px solid #2C5AA0;
-    outline-offset: 1px;
-}
-
-/* 个人资料内容样式更新 */
-.profile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-}
-
-.profile-title {
-    margin: 5px 0;
-    color: #555;
-    text-align: center;
-    width: 100%;
-}
-
-.profile-affiliation {
-    margin: 5px 0;
-    color: #000;
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-}
-
-.profile-location {
-    margin: 5px 0;
-    color: #666;
-    text-align: center;
-    width: 100%;
-}
-
-.profile-email {
-    margin: 5px 0;
-    color: #666;
-    text-align: center;
-    width: 100%;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-.social-icons a {
-    color: #000000;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.15);
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-decoration: none;
-}
-
-.social-icons a i {
-    font-size: 24px;
-    transition: all 0.1s ease;
-}
-
-.social-icons a:hover i {
-    transform: scale(1.3);
-}
-
-/* 彩色社交图标样式 */
-.social-icon.email-icon i {
-    color: #ea4335; /* Google红色 */
-}
-
-.social-icon.email-icon:hover i {
-    color: #d33b2c;
-}
-
-.social-icon.scholar-icon i {
-    color: #4285f4; /* Google蓝色 */
-}
-
-.social-icon.scholar-icon:hover i {
-    color: #3367d6;
-}
-
-.social-icon.github-icon i {
-    color: #6e5494; /* GitHub紫色 */
-}
-
-.social-icon.github-icon:hover i {
-    color: #563d7c;
-}
-
-.social-icon.researchgate-icon i {
-    color: #00d4aa; /* ResearchGate青绿色 */
-}
-
-.social-icon.researchgate-icon:hover i {
-    color: #00b894;
-}
-
-.social-icon.orcid-icon i {
-    color: #a6ce39; /* ORCID绿色 */
-}
-
-.social-icon.orcid-icon:hover i {
-    color: #8bc34a;
-}
-
-.social-icon.blog-icon i {
-    color: #ff6b35; /* 博客橙色 */
-}
-
-.social-icon.blog-icon:hover i {
-    color: #e85a2c;
-}
-
-.social-icon.openreview-icon i {
-    color: #FF6B35; /* OpenReview橙色 */
-}
-
-.social-icon.openreview-icon:hover i {
-    color: #e55a2b;
-}
-
-.social-icon.steam-icon i {
-    color: #1b2838; /* Steam深蓝色 */
-}
-
-.social-icon.steam-icon:hover i {
-    color: #171a21;
-}
-
-/* 邮件复制成功提示 */
-.email-copy-toast {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-8px);
-    background-color: #000;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.email-copy-toast::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-top-color: #000;
-}
-
-.email-copy-toast.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-12px);
-}
-
-/* 社交图标悬浮提示 */
-.social-icon-tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-8px);
-    background-color: #000;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.social-icon-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-top-color: #000;
-}
-
-.social-icon:hover .social-icon-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-12px);
-}
-
-/* 移动端适配 */
-@media (max-width: 900px) {
-    .social-icons {
-        flex-wrap: wrap;
-        gap: 1px;
-    }
-
-    .social-icons a {
-        width: 48px;
-        height: 48px;
-        padding: 12px;
-    }
-
-    .social-icons a i {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
     .social-icons {
         gap: 1px;
         flex-direction: row;
@@ -3531,432 +1492,13 @@ section[id] {
     .social-icons a i {
         font-size: 24px;
     }
+}
 
-    /* 移动端教育部分样式 */
-    .education-item {
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 15px;
-        padding: 12px 5px;
-        gap: 10px;
-    }
+@media print {
 
-    .edu-logo {
-        display: none !important;
-    }
-
-    .university-logo {
-        width: 28px;
-        height: 28px;
-    }
-
-    .edu-text-wrapper {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .edu-content {
-        margin-right: 0;
-        margin-bottom: 0;
-        flex: 1;
-    }
-
-    .edu-institution {
-        font-size: 16px;
-        margin-bottom: 2px;
-    }
-
-    .edu-department {
-        font-size: 16px;
-        margin-bottom: 1px;
-    }
-
-    .edu-degree {
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-
-    .edu-period.desktop-period {
-        display: none;
-    }
-
-    .edu-period.mobile-period {
-        display: block;
-        text-align: left;
-        min-width: auto;
-        font-size: 16px;
+    a {
         color: #000;
-        font-weight: normal;
-        margin-top: 3px;
+        text-decoration: underline;
     }
-}
-
-/* 个人资料容器样式 */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-}
-
-/* 主标题样式 */
-.main-header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 小屏幕设备文字对齐优化 - 统一处理所有两端对齐的文本 */
-@media (max-width: 768px) {
-    /* 特殊处理长文本内容 */
-    .bio,
-    .looking,
-    .student-note,
-    .research-interests {
-        text-align: left !important;
-        text-align-last: left !important;
-    }
-
-    /* 强制保持个人资料信息居中对齐 */
-    .profile-section,
-    .profile-section *,
-    .profile-title,
-    .profile-affiliation,
-    .profile-location,
-    .profile-email {
-        text-align: center !important;
-    }
-    
-    /* 姓名居中对齐，描述和链接列表左对齐 */
-    .profile-name {
-        text-align: center !important;
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: visible;
-    }
-    
-    .profile-bio,
-    .profile-links {
-        text-align: left !important;
-    }
-
-    /* 移动端隐藏返回顶部按钮和暗亮模式切换按钮 */
-    .back-to-top {
-        display: none !important;
-    }
-    
-    .theme-toggle {
-        display: none !important;
-    }
-}
-
-/* Align top-nav height with GitHub Corner */
-.top-nav { height: 64px; }
-.nav-container { height: 64px; padding: 0 20px; }
-@media (max-width: 900px) {
-    .top-nav { height: 56px; }
-    .nav-container { height: 56px; padding: 0 15px; }
-}
-@media (max-width: 500px) {
-    .top-nav { height: 48px; }
-    .nav-container { height: 48px; padding: 0 10px; }
-
-    /* 小屏幕布局调整 */
-    .pub-filter-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    /* 小屏幕年份筛选按钮样式 */
-    .year-filter-btn {
-        padding: 4px 12px;
-        font-size: 16px;
-    }
-}
-
-/* Hide GitHub Corner on mobile */
-@media (max-width: 900px) {
-	.github-corner { display: none !important; }
-}
-.fa-rss-square{
-    color: #fa9b39;
-}
-
-/* 组织logo样式 */
-.org-logo {
-    width: 16px;
-    height: 16px;
-    margin-right: 0;
-    vertical-align: middle;
-    display: inline-block;
-}
-
-/* BibTeX 显示面板样式 */
-.bibtex-panel {
-    display: none;
-    flex-basis: 100%;
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 0;
-    text-align: left; /* 确保面板内容左对齐 */
-}
-
-.bibtex-panel.show {
-    display: block;
-}
-
-.bibtex-panel-content {
-    width: 100%;
-    background-color: #F8F9FA;
-    border-radius: 4px;
-    padding: 20px;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-height: 400px;
-    overflow-y: auto;
-    text-align: left; /* 确保内容左对齐 */
-}
-
-.bibtex-copy-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    z-index: 10;
-}
-
-.bibtex-copy-btn:hover {
-    color: #2c5aa0;
-}
-
-.bibtex-copy-btn svg {
-    width: 16px;
-    height: 16px;
-}
-
-.bibtex-content {
-    color: #000000;
-    font-family: monospace;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    padding-right: 50px;
-    overflow-x: auto;
-    text-align: left; /* 确保文本内容左对齐 */
-}
-
-/* BibTeX 语法高亮 - 使用JavaScript动态添加 */
-.bibtex-content .bibtex-type {
-    color: #6f42c1;
-    font-weight: 500;
-}
-
-.bibtex-content .bibtex-keyword {
-    color: #e36209;
-    font-weight: 500;
-}
-
-.bibtex-content .bibtex-value {
-    color: #555;
-}
-
-/* 响应式设计 */
-@media (max-width: 900px) {
-    .bibtex-panel {
-        width: 100%;
-        margin-left: 0; /* 移动端图片隐藏，不需要左边距 */
-        margin-right: 0;
-        text-align: left; /* 确保面板内容左对齐 */
-    }
-    
-    .bibtex-panel-content {
-        padding: 15px;
-        max-height: 300px;
-        text-align: left; /* 确保面板内容左对齐 */
-        overflow-x: auto; /* 允许水平滚动 */
-        overflow-y: auto; /* 保持垂直滚动 */
-    }
-    
-    .bibtex-content {
-        font-size: 16px;
-        padding-right: 40px;
-        text-align: left; /* 确保文本内容左对齐 */
-        white-space: pre; /* 移动端不换行 */
-        word-wrap: normal; /* 不允许单词断行 */
-        overflow-x: auto; /* 显示水平滚动条 */
-    }
-    
-    .bibtex-copy-btn {
-        top: 10px;
-        right: 10px;
-        padding: 6px;
-    }
-    
-    .bibtex-copy-btn svg {
-        width: 14px;
-        height: 14px;
-    }
-}
-
-/* 天气组件样式 - 导航栏版本 */
-.weather-widget {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin-left: 20px;
-    background: none;
-    border-radius: 0;
-    color: #000;
-    box-shadow: none;
-    transition: none;
-}
-
-.weather-widget:hover {
-    transform: none;
-    box-shadow: none;
-}
-
-.weather-loading {
-    text-align: center;
-    padding: 0;
-    font-size: 12px;
-    color: #000;
-}
-
-.weather-loading i {
-    margin-right: 0;
-    font-size: 12px;
-}
-
-/* 简化版天气内容 */
-.weather-content-simple {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.weather-left {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-}
-
-.weather-city-simple {
-    font-size: 16px;
-    font-weight: 400;
-    color: #2C5AA0;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.weather-temp-simple {
-    font-size: 16px;
-    font-weight: 600;
-    color: #2C5AA0;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.weather-icon-simple {
-    font-size: 20px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-}
-
-.weather-error {
-    text-align: center;
-    padding: 0;
-    font-size: 11px;
-    color: #2C5AA0;
-}
-
-.weather-error i {
-    margin-right: 3px;
-    color: #f44336;
-}
-
-/* 移动端隐藏天气组件 */
-@media (max-width: 900px) {
-    .weather-widget {
-        display: none !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .bibtex-panel {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: left; /* 确保面板内容左对齐 */
-    }
-    
-    .bibtex-panel-content {
-        padding: 12px;
-        max-height: 250px;
-        text-align: left; /* 确保面板内容左对齐 */
-        overflow-x: auto; /* 允许水平滚动 */
-        overflow-y: auto; /* 保持垂直滚动 */
-    }
-    
-    .bibtex-content {
-        font-size: 16px;
-        padding-right: 35px;
-        text-align: left; /* 确保文本内容左对齐 */
-        white-space: pre; /* 移动端不换行 */
-        word-wrap: normal; /* 不允许单词断行 */
-        overflow-x: auto; /* 显示水平滚动条 */
-    }
-    
-    .bibtex-copy-btn {
-        top: 8px;
-        right: 8px;
-        padding: 5px;
-    }
-    
-    .bibtex-copy-btn svg {
-        width: 12px;
-        height: 12px;
-    }
-}
-
-/* 确保组织链接文字不换行 */
-.page__footer-follow .social-icons a {
-    white-space: nowrap;
-}
-
-/* 移除页脚FEED图标的缩放动画 */
-.page__footer-follow .social-icons a:hover {
-    transform: none !important;
-}
-
-.page__footer-follow .social-icons a:hover i {
-    transform: none !important;
 }
 
