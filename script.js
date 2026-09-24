@@ -140,42 +140,6 @@ function createScrollHandler() {
     };
 }
 
-function setupMobileMenu() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    if (!mobileMenuToggle || !mobileNav || !mobileNavOverlay) return;
-
-    function setMenuOpen(open) {
-        [mobileMenuToggle, mobileNav, mobileNavOverlay].forEach(function (el) {
-            el.classList.toggle('active', open);
-        });
-        document.body.classList.toggle('mobile-menu-open', open);
-        mobileMenuToggle.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
-    }
-
-    mobileMenuToggle.addEventListener('click', function () {
-        setMenuOpen(!mobileMenuToggle.classList.contains('active'));
-    });
-
-    document.querySelectorAll('.mobile-nav a').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (!targetId.startsWith('#')) return;
-            e.preventDefault();
-            setMenuOpen(false);
-            navigateTo(targetId);
-        });
-    });
-
-    // 点击菜单以外的地方（包括遮罩层）关闭菜单
-    document.addEventListener('click', function (e) {
-        if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
-            setMenuOpen(false);
-        }
-    });
-}
-
 // 禁用审稿中条目（data-status="under-review"）的链接（标题和 pub-links）
 function disableUnderReviewLinks() {
     document.querySelectorAll('.publication-item[data-status="under-review"] .pub-content h3 a, .publication-item[data-status="under-review"] .pub-links a').forEach(function (a) {
@@ -238,7 +202,6 @@ function init() {
 
     updateDeployTime();
     setupNavLinks();
-    setupMobileMenu();
     disableUnderReviewLinks();
     setupEmailCopy();
 
