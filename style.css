@@ -1,12 +1,3 @@
-/* 全局平滑滚动 */
-html {
-    scroll-behavior: auto;
-}
-
-html.smooth-scroll {
-    scroll-behavior: smooth;
-}
-
 /* 顶部导航栏 */
 
 .nav-title a {
@@ -21,9 +12,6 @@ html.smooth-scroll {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -32,13 +20,8 @@ html.smooth-scroll {
     color: #1a4480;
 }
 
-.nav-title a:active {
-    background-color: transparent !important;
-}
-
 .nav-title a:focus {
     outline: none;
-    background-color: transparent !important;
 }
 
 .nav-links {
@@ -52,7 +35,6 @@ html.smooth-scroll {
     color: #2c5aa0;
     text-decoration: none;
     padding: 5px 10px;
-    border-radius: 3px;
     white-space: nowrap;
     position: relative;
     display: inline-block;
@@ -61,9 +43,6 @@ html.smooth-scroll {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -77,7 +56,6 @@ html.smooth-scroll {
     height: 2px;
     background-color: #2c5aa0;
     transform: translateX(-50%);
-    transition: none;
 }
 
 .nav-links a:hover {
@@ -91,18 +69,8 @@ html.smooth-scroll {
     width: calc(100% - 20px);
 }
 
-.nav-links a:active {
-    background-color: transparent !important;
-}
-
 .nav-links a:focus {
     outline: none;
-    background-color: transparent !important;
-}
-
-/* 导航栏图标样式 */
-.nav-links a i {
-    margin-right: 6px;
 }
 
 /* Reset and Base Styles */
@@ -117,7 +85,6 @@ body {
     font-family: "Trebuchet MS",Helvetica,sans-serif;
     line-height: 1.6;
     background-color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* 调整container顶部内边距，为固定导航栏腾出空间 */
@@ -144,7 +111,6 @@ body {
 .profile-section {
     text-align: center;
     padding: 30px 20px;
-    border-radius: 8px;
     min-height: 420px;
 }
 
@@ -158,14 +124,6 @@ body {
     max-width: 280px;
     line-height: 1.4;
     white-space: nowrap;
-    overflow: visible;
-}
-
-.profile-name img {
-    vertical-align: middle;
-    width: auto;
-    height: 28px;
-    display: inline-block;
 }
 
 .profile-bio {
@@ -232,7 +190,6 @@ body {
 
 /* About Section */
 .about-section p {
-    line-height: 1.6;
     color: #000;
     text-align: justify;
 }
@@ -243,27 +200,6 @@ body {
     text-decoration: underline;
 }
 
-/* News Section */
-.news-section ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.news-section li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: #000;
-    padding-left: 0;
-}
-.news-section li:last-child {
-    margin-bottom: 0;
-}
-/* 每年一块：<section year> + <ol><li class="publication-item">… */
-.year-section {
-    margin-bottom: 0;
-}
-
 /* 分组之间留出间隔 */
 .year-section + .year-section {
     margin-top: 2em;
@@ -272,7 +208,6 @@ body {
 .publications-year-list {
     list-style: none;
     margin: 0 0 0.2em 0;
-    padding-left: 0;
 }
 
 .publications-year-list > .publication-item {
@@ -316,23 +251,11 @@ body {
     margin-bottom: 0;
 }
 
-.publication-item:last-child {
-    border-bottom: none;
-}
-
 .pub-content {
     display: block;
     width: 100%;
     min-width: 0;
-    padding: 0;
     line-height: 1.38;
-}
-
-.pub-content h3 {
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #000;
-    line-height: 1.3;
 }
 
 .authors {
@@ -352,55 +275,41 @@ body {
     gap: 8px;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
     margin: 2px 0 0 0;
-}
-
-.pub-links li {
-    margin: 0;
-    padding: 0;
 }
 
 .pub-links li:not(:has(a)) {
     color: #333;
 }
 
-/* Awards Section */
-.awards-section {
-    margin-bottom: 30px;
-}
-
+/* News / Awards / Education 列表 */
+.news-section ul,
 .awards-section ul,
 .education-section ul {
     list-style-type: disc;
     padding-left: 20px;
-    margin: 0;
 }
 
+.news-section li,
 .awards-section li,
 .education-section li {
     margin-bottom: 10px;
     line-height: 1.5;
     color: #000;
-    padding-left: 0;
 }
 
+.news-section li:last-child,
 .awards-section li:last-child,
 .education-section li:last-child {
     margin-bottom: 0;
 }
 
-/* 显示桌面端日期 */
-
 h2 {
-    color: #000;
-    padding-bottom: 10px;
     font-size: 16.848px;
 }
 
 p {
     margin-bottom: 10px;
-    text-align: justify;
 }
 a {
     color: #2c5aa0;
@@ -411,16 +320,10 @@ a:hover {
     text-decoration: underline;
 }
 
-strong {
-    font-weight: bold;
-}
-
 /* Header Section */
 
 .profile-photo {
     margin-bottom: 20px;
-    position: relative;
-    flex: 0 0 230px;
 }
 
 .profile-photo img {
@@ -433,31 +336,9 @@ strong {
     transition: box-shadow 0.3s ease;
 }
 
-.title {
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.email {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.bio {
-    margin-bottom: 15px;
-    text-align: justify;
-    line-height: 1.5;
-}
-
 /* 为所有带id的section添加scroll-margin-top，精确控制滚动位置 */
 section[id] {
     scroll-margin-top: 80px;
-}
-
-/* 新闻部分滚动样式 */
-.news-section {
-    margin-bottom: 15px;
-
 }
 
 /* 自定义滚动条样式 - Webkit浏览器 */
@@ -478,50 +359,18 @@ section[id] {
     /* 始终显示垂直滚动条 */
     overflow-x: hidden;
     /* 隐藏水平滚动 */
-    border-radius: 5px;
-    margin-left: 0;
-    white-space: normal;
-    /* 允许文本换行 */
     padding-right: 5px;
     scrollbar-width: thin;
 }
 
-/* Publications Section */
-.publications-section {
-    margin-bottom: 30px;
-}
-
 /* 年份分组标题样式 */
 .year-header {
-    display: block;
     padding-bottom: 2px;
+    margin-bottom: 16px;
 }
 
 .year-header h3 {
     color: #2C5AA0
-}
-
-.publications-list > .year-section:first-child .year-header {
-    margin-top: 10px;
-}
-
-/* Education Section */
-.education-section {
-    margin-bottom: 30px;
-}
-
-/* Services Section */
-.code {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    font-size: 1em;
-    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
-    font-variant-ligatures: none;
-    font-feature-settings: "liga" 0;
-    background: #fafafa;
-    border: 1px solid #f2f3f3;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.125)
 }
 
 /* Footer */
@@ -531,15 +380,6 @@ section[id] {
     background-color: #f2f3f3;
     border-top: 1px solid #e0e0e0;
     padding: 20px 0;
-}
-
-.footer-follow {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    color: #666;
 }
 
 /* AcademicPages Footer Styles */
@@ -576,17 +416,11 @@ section[id] {
 
 .page__footer-follow .social-icons {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
-}
-
-.page__footer-follow .social-icons li {
-    margin: 0;
 }
 
 .page__footer-follow .social-icons li:first-child {
@@ -597,18 +431,22 @@ section[id] {
     font-size: 16px;
 }
 
+/* 确保组织链接文字不换行 */
+.page__footer-follow .social-icons a {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
 /* Footer copyright */
 .page__footer-copyright {
     margin-top: 8px;
     color: #666;
-    font-size: 16px;
     line-height: 1.4;
-}
-
-/* 确保导航栏在所有情况下都保持深蓝色背景 */
-.top-nav,
-.top-nav.scrolled {
-    background-color: #fff !important;
 }
 
 /* 回到顶部按钮样式 */
@@ -649,39 +487,6 @@ section[id] {
     outline-offset: 1px;
 }
 
-/* 个人资料内容样式更新 */
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-.social-icons a {
-    color: #000000;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.15);
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-decoration: none;
-}
-
-.social-icons a i {
-    font-size: 24px;
-    transition: all 0.1s ease;
-}
-
-.social-icons a:hover i {
-    transform: scale(1.3);
-}
-
 /* 邮件复制成功提示 */
 .email-copy-toast {
     position: absolute;
@@ -718,48 +523,22 @@ section[id] {
     transform: translateX(-50%) translateY(-12px);
 }
 
-/* Align top-nav height with GitHub Corner */
 .top-nav {
-    color: #fff;
+    background-color: #fff;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, padding 0.3s; height: 64px; }
+    height: 64px; }
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: padding 0.3s; height: 64px; padding: 0 20px; }
-
-/* Hide GitHub Corner on mobile */
-.fa-rss-square{
-    color: #fa9b39;
-}
-
-/* 确保组织链接文字不换行 */
-.page__footer-follow .social-icons a {
-    color: #666;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
-
-/* 移除页脚FEED图标的缩放动画 */
-.page__footer-follow .social-icons a:hover {
-    transform: none !important;
-}
-
-.page__footer-follow .social-icons a:hover i {
-    transform: none !important;
-}
+    height: 64px; padding: 0 20px; }
 
 @media (max-width: 1200px) {
     .container {
@@ -771,33 +550,9 @@ section[id] {
         gap: 40px;
     }
 
-    .left-sidebar {
-        flex: 0 0 280px;
-    }
-
     .profile-photo img {
         width: 140px;
         height: 140px;
-    }
-}
-
-@media (max-width: 900px) and (min-width: 769px) {
-
-    /* 中等屏幕年份标题样式 */
-    .year-header {
-        text-align: left;
-    }
-
-    .year-header h3 {
-        font-size: 1.25em;
-    }
-
-    .pub-content {
-        flex: 1; /* 与左侧配图并排，占满剩余宽度 */
-        margin: 0; /* 移除所有margin */
-        padding: 0; /* 移除所有padding */
-        box-sizing: border-box; /* 确保box-sizing一致 */
-        text-align: left;
     }
 }
 
@@ -835,8 +590,6 @@ section[id] {
 
     .profile-links {
         max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -861,27 +614,8 @@ section[id] {
         margin-left: 0;
     }
 
-    /* 移动端年份标题样式 */
-    .year-header {
-        text-align: left;
-    }
-
-    .pub-content {
-        text-align: left;
-    }
     .news-list {
         max-height: 350px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        border-radius: 5px;
-        margin-left: 0;
-        white-space: normal;
-        padding-right: 5px;
-    }
-
-    .top-nav,
-    .top-nav.scrolled {
-        background-color: #fff;
     }
 
     .container {
@@ -898,36 +632,10 @@ section[id] {
     .profile-photo img {
         width: 230px;
         height: 230px;
-        margin: 0;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-    }
-
-    .title,
-    .email {
-        text-align: left;
-    }
-
-    .bio {
-        text-align: left;
-        line-height: 1.5;
-        margin-bottom: 10px;
-        padding-left: 0;
-    }
-
-    .publications-year-list > .publication-item {
-        text-align: left;
     }
 
     .year-header h3 {
         font-size: 1.2em;
-    }
-
-    /* Services Section Mobile Styles */
-
-    h1 {
-        margin-bottom: 10px;
-        line-height: 1.2;
     }
 
     h2 {
@@ -939,54 +647,6 @@ section[id] {
         line-height: 1.3;
     }
 
-    .footer-follow {
-        gap: 8px;
-        justify-content: center;
-    }
-
-    /* 移动端学校图标调整 */
-    .bio img[src*="icon-title"] {
-        width: 18px;
-        height: 18px;
-        margin-left: 3px;
-    }
-
-    .bio img[src*="scuec.png"] {
-        width: 65px;
-        height: 25px;
-        margin-left: 3px;
-    }
-
-    .pub-links {
-        gap: 8px;
-    }
-
-    .pub-links a {
-        margin-right: 8px;
-        padding: 0;
-        margin: 0;
-        background-color: transparent;
-        border-radius: 0;
-    }
-
-    .pub-links a:hover {
-        background-color: transparent !important;
-    }
-    body {
-        -webkit-overflow-scrolling: touch;
-    }
-
-    /* 优化文本选择 */
-    p,
-    h1,
-    h2,
-    h3 {
-        -webkit-user-select: text;
-        -moz-user-select: text;
-        -ms-user-select: text;
-        user-select: text;
-    }
-
     /* 移动端页脚居中对齐 */
     .main-footer {
         display: flex;
@@ -995,28 +655,11 @@ section[id] {
         text-align: center;
         padding: 20px 10px;
     }
-    .social-icons {
-        flex-wrap: wrap;
-        gap: 1px;
-    }
 
-    .social-icons a {
-        width: 48px;
-        height: 48px;
-        padding: 12px;
-    }
-
-    .social-icons a i {
-        font-size: 24px;
-    }
     .top-nav {
-        background-color: #4b2e83; height: 56px; }
+        height: 56px; }
     .nav-container {
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center; height: 56px; padding: 0 15px; }
-	.github-corner { display: none; }
+        height: 56px; padding: 0 15px; }
 }
 
 @media (max-width: 768px) {
@@ -1040,96 +683,36 @@ section[id] {
         align-items: flex-start;
         gap: 15px;
     }
-    
-    .footer-left {
-        text-align: left;
-        order: 1;
-    }
+
     .page__footer {
         padding: 0 15px;
-        text-align: left;
     }
-    
-    .page__footer > a {
-        color: #666;
-        text-decoration: none;
-        display: inline-block;
-    }
-    
+
     .page__footer-follow {
         margin: 0;
     }
-    
+
     .page__footer-follow .social-icons {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         gap: 10px;
-        flex-wrap: wrap;
     }
-    
-    .page__footer-follow .social-icons li {
-        margin: 0;
-    }
-    
+
     .page__footer-follow .social-icons li:first-child {
         color: #333;
     }
-    
-    .page__footer-follow .social-icons a {
-        color: #666;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.3s ease;
-    }
-    
+
     .page__footer-follow .social-icons a:hover {
         color: #2c5aa0;
     }
-    
-    .page__footer-follow .social-icons i {
-        font-size: 16px;
-    }
-    
+
     .page__footer-copyright {
         margin-top: 1px;
-        padding-top: 0;
-        color: #666;
-        font-size: 16px;
-        line-height: 1.4;
-        text-align: left;
-    }
-    /* 特殊处理长文本内容 */
-    .bio {
-        text-align: left;
-        text-align-last: left;
     }
 
-    /* 强制保持个人资料信息居中对齐 */
-    .profile-section,
-    .profile-section * {
-        text-align: center;
-    }
-    
-    /* 姓名居中对齐，描述和链接列表左对齐 */
     .profile-name {
-        text-align: center;
         max-width: 100%;
-        white-space: nowrap;
-        overflow: visible;
-    }
-    
-    .profile-bio,
-    .profile-links {
-        text-align: left !important;
     }
 
-    /* 移动端隐藏返回顶部按钮和暗亮模式切换按钮 */
+    /* 移动端隐藏返回顶部按钮 */
     .back-to-top {
         display: none;
     }
@@ -1143,81 +726,27 @@ section[id] {
 @media (max-width: 480px) {
 
     .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
     }
-    
-    .footer-left {
-        text-align: left;
-        order: 1;
-    }
-    
+
     .page__footer {
         padding: 0 10px;
     }
-    
-    .page__footer > a {
-        color: #666;
-        text-decoration: none;
-        display: inline-block;
-    }
-    
-    .page__footer-follow {
-        margin: 0;
-    }
-    
+
     .page__footer-follow .social-icons {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         gap: 8px;
-        flex-wrap: wrap;
     }
-    
-    .page__footer-follow .social-icons li {
-        margin: 0;
-    }
-    
+
     .page__footer-follow .social-icons li:first-child {
         color: #666;
     }
-    
-    .page__footer-follow .social-icons a {
-        color: #666;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.3s ease;
-    }
-    
-    .page__footer-follow .social-icons a:hover {
-        color: #2c5aa0;
-    }
-    
-    .page__footer-follow .social-icons i {
-        font-size: 16px;
-    }
-    
+
     .page__footer-copyright {
         margin-top: 0;
-        padding-top: 0;
-        color: #666;
-        font-size: 16px;
-        line-height: 1.4;
-    }
-    .container {
-        padding: 50px 10px 15px;
     }
 
-    h1 {
-        line-height: 1.1;
-        margin-bottom: 8px;
-        text-align: left;
+    .container {
+        padding: 50px 10px 15px;
     }
 
     h2 {
@@ -1226,18 +755,11 @@ section[id] {
     }
 
     h3 {
-        line-height: 1.3;
         margin-bottom: 8px;
     }
 
     .profile-section {
         padding: 20px 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 0;
-        text-align: center;
     }
 
     .profile-photo {
@@ -1249,40 +771,13 @@ section[id] {
         display: none;
     }
 
-    .profile-links {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .profile-link-item > span:not(.email-copy-toast) {
-        display: none;
-    }
-
-    .profile-link-item {
-        justify-content: center;
-    }
-
     .profile-link-item i {
-        width: 28px;
         font-size: 28px;
     }
 
     .profile-photo img {
         width: 200px;
         height: 200px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease;
-    }
-
-    .bio {
-        line-height: 1.4;
-        margin-bottom: 8px;
-        text-align: left;
     }
 
     .news-list,
@@ -1292,67 +787,15 @@ section[id] {
 
     .publications-section .pub-content {
         padding: 2px 0;
-        text-align: left;
-        display: block;
-    }
-
-    .authors {
-        margin-bottom: 2px;
     }
 
     .pub-links a {
-        margin-right: 0;
         line-height: 1.4;
-    }
-
-    /* 小屏幕页脚优化 */
-    .main-footer {
-        display: flex;
-        align-items: center; /* vertical centering */
-        justify-content: center;
-        text-align: center;
-    }
-
-    /* 移动端学校图标调整 */
-    .bio img[src*="icon-title"] {
-        width: 15px;
-        height: 15px;
-        margin-left: 2px;
-    }
-
-    .bio img[src*="scuec.png"] {
-        width: 60px;
-        height: 20px;
-        margin-left: 2px;
-    }
-
-    /* 改善publication内容在小屏幕上的显示 */
-    .pub-content h3 {
-        line-height: 1.3;
-        margin-bottom: 8px;
-        word-wrap: break-word;
-        hyphens: auto;
     }
 
     .pub-links {
         margin-top: 3px;
         gap: 6px;
-    }
-    .social-icons {
-        gap: 1px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .social-icons a {
-        width: 48px;
-        height: 48px;
-        padding: 12px;
-    }
-
-    .social-icons a i {
-        font-size: 24px;
     }
 }
 
@@ -1363,4 +806,3 @@ section[id] {
         text-decoration: underline;
     }
 }
-

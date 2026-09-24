@@ -5,18 +5,22 @@
     <title>YangYang (杨杨) - Homepage</title>
     <description>YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision</description>
     <link>https://yangyang.wiki/</link>
-    <pubDate>Sun, 23 Aug 2026 00:00:00 +0800</pubDate>
-    <lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0800</lastBuildDate>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 +0800</pubDate>
+    <lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0800</lastBuildDate>
     <generator>Custom RSS Generator</generator>
     <language>en-US</language>
     <webMaster>yangyang@mail.scuec.edu.cn (Yang Yang)</webMaster>
     <managingEditor>yangyang@mail.scuec.edu.cn (Yang Yang)</managingEditor>
     <copyright>Copyright 2024-2026 Yang Yang</copyright>
-    <image>
-      <url>https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png</url>
-      <title>YangYang (杨杨) - Homepage</title>
-      <link>https://yangyang.wiki/</link>
-    </image>
+    <item>
+      <title>Received the National Scholarship for Master's Students</title>
+      <description>I received the National Scholarship for Master's Students, the highest scholarship for master's students in China.</description>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#news</link>
+      <guid isPermaLink="false">news-national-scholarship-2026</guid>
+      <category>News</category>
+      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
+    </item>
     <item>
       <title>Ontology-Guided Lesion-Aware Vision-Language Alignment for Retinal Image-Text Retrieval</title>
       <description>An ontology-guided, lesion-aware vision-language alignment framework for retinal image-text retrieval. Under review at IEEE Journal of Biomedical and Health Informatics (JBHI). Authors: Huang, X., Yang, Y., Lv, Y., et al.</description>
@@ -27,29 +31,11 @@
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>
     <item>
-      <title>Hi-ERMNet: Hierarchical Transformer with Edge Refinement for Retinal Vessel Segmentation</title>
-      <description>A hierarchical transformer with edge refinement for fine retinal vessel segmentation. Under review at the Asian Conference on Computer Vision (ACCV). Authors: Yang, Y., Huang, X., Zhang, X., et al.</description>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0800</pubDate>
-      <link>https://yangyang.wiki/#publications</link>
-      <guid isPermaLink="false">publication-edge-prior-transformer-2026</guid>
-      <category>Publication</category>
-      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
-    </item>
-    <item>
       <title>Learning Symmetric Cross-Modal Representations via Feature Distillation and Contrastive Fusion for Brain Tumor Segmentation</title>
       <description>A deep learning model for multimodal brain tumor segmentation using symmetric feature distillation and contrastive fusion. Under review at Applied Soft Computing. Authors: Yang, Y., Huang, X., Zhang, X., et al.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
       <link>https://yangyang.wiki/#publications</link>
       <guid isPermaLink="false">publication-symmetric-cross-modal-2026</guid>
-      <category>Publication</category>
-      <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
-    </item>
-    <item>
-      <title>Background as Parts: Sub-Background Modeling for Uncertainty-Aware Semi-Supervised Medical Image Segmentation</title>
-      <description>Sub-background modeling for uncertainty-aware semi-supervised medical image segmentation. Manuscript in preparation, to be submitted. Authors: Yang, Y., Huang, X., Zhang, X., et al.</description>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 +0800</pubDate>
-      <link>https://yangyang.wiki/#publications</link>
-      <guid isPermaLink="false">publication-background-as-parts-2026</guid>
       <category>Publication</category>
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>

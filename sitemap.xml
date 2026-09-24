@@ -7,12 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yangyang.wiki/bibtex.html</loc>
-    <lastmod>2025-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://yangyang.wiki/feed.xml</loc>
     <lastmod>2025-11-16</lastmod>
     <changefreq>weekly</changefreq>

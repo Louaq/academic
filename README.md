@@ -3,8 +3,7 @@
 
 > Demo: [https://yangyang.wiki](https://yangyang.wiki)
 
-A modern, responsive academic homepage inspired by the NeonMint design, featuring a cyberpunk/neon aesthetic with advanced animations and interactive elements.
+A simple, responsive academic homepage built with plain HTML, CSS and JavaScript — no frameworks or build tools.
 
 ## 📄 License
 This project is open source and available under the [MIT License](LICENSE).
-

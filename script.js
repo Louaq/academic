@@ -6,7 +6,7 @@ function saveScrollPosition(y) {
 }
 
 // 统一的滚动跳转：导航、移动菜单、前进/后退、回到顶部共用
-function scrollToTarget(targetId, smooth = true) {
+function scrollToTarget(targetId) {
     let top = 0;
     if (targetId !== '#home') {
         const targetElement = document.querySelector(targetId);
@@ -17,12 +17,12 @@ function scrollToTarget(targetId, smooth = true) {
     }
 
     isProgrammaticScroll = true;
-    window.scrollTo({ top: top, behavior: smooth ? 'smooth' : 'auto' });
+    window.scrollTo({ top: top, behavior: 'smooth' });
     saveScrollPosition(top);
     // 给滚动动画留出时间后再清除标记
     setTimeout(function () {
         isProgrammaticScroll = false;
-    }, smooth ? 1000 : 100);
+    }, 1000);
 }
 
 function setActiveNavLink(targetId) {
@@ -78,20 +78,17 @@ function setupNavLinks() {
 
     document.querySelectorAll('.desktop-nav a').forEach(function (link) {
         link.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (!targetId.startsWith('#')) return;
             e.preventDefault();
-            navigateTo(targetId);
+            navigateTo(this.getAttribute('href'));
         });
     });
 }
 
-// 统一的滚动处理器：保存位置、导航高亮、导航栏样式、回到顶部按钮
+// 统一的滚动处理器：保存位置、导航高亮、回到顶部按钮
 function createScrollHandler() {
     let ticking = false;
-    const sections = document.querySelectorAll('section[id], header[id]');
+    const sections = document.querySelectorAll('section[id]');
     const topNav = document.querySelector('.top-nav');
-    const scrolledEls = [topNav, document.querySelector('.nav-container'), document.querySelector('.nav-title a')];
     const backToTopButton = document.getElementById('backToTop');
 
     function update() {
@@ -118,13 +115,6 @@ function createScrollHandler() {
             setActiveNavLink(current);
         }
 
-        // 导航栏滚动效果
-        if (scrolledEls.every(Boolean)) {
-            scrolledEls.forEach(function (el) {
-                el.classList.toggle('scrolled', scrollY > 50);
-            });
-        }
-
         if (backToTopButton) {
             backToTopButton.classList.toggle('visible', scrollY > 300);
         }
@@ -138,15 +128,6 @@ function createScrollHandler() {
             ticking = true;
         }
     };
-}
-
-// 禁用审稿中条目（data-status="under-review"）的链接（标题和 pub-links）
-function disableUnderReviewLinks() {
-    document.querySelectorAll('.publication-item[data-status="under-review"] .pub-content h3 a, .publication-item[data-status="under-review"] .pub-links a').forEach(function (a) {
-        a.classList.add('link-disabled');
-        a.removeAttribute('href');
-        a.removeAttribute('target');
-    });
 }
 
 // 邮件图标：点击复制邮箱地址
@@ -190,10 +171,6 @@ function setupEmailCopy() {
 function init() {
     restoreScrollPosition();
     window.addEventListener('scroll', createScrollHandler(), { passive: true });
-    // 恢复位置后再启用平滑滚动
-    setTimeout(function () {
-        document.documentElement.classList.add('smooth-scroll');
-    }, 100);
 
     const currentYearElement = document.getElementById('current-year');
     if (currentYearElement) {
@@ -202,7 +179,6 @@ function init() {
 
     updateDeployTime();
     setupNavLinks();
-    disableUnderReviewLinks();
     setupEmailCopy();
 
     // 浏览器后退/前进
@@ -213,7 +189,7 @@ function init() {
     const backToTopButton = document.getElementById('backToTop');
     if (backToTopButton) {
         backToTopButton.addEventListener('click', function () {
-            scrollToTarget('#home', false);
+            scrollToTarget('#home');
         });
     }
 }
