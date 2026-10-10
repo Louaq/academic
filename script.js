@@ -5,7 +5,7 @@ function saveScrollPosition(y) {
     sessionStorage.setItem('scrollPosition', String(y));
 }
 
-// 统一的滚动跳转：导航、移动菜单、前进/后退、回到顶部共用
+// 统一的滚动跳转：导航、前进/后退、回到顶部共用
 function scrollToTarget(targetId) {
     let top = 0;
     if (targetId !== '#home') {
@@ -68,15 +68,7 @@ function updateDeployTime() {
 }
 
 function setupNavLinks() {
-    const navTitle = document.querySelector('.nav-title a');
-    if (navTitle) {
-        navTitle.addEventListener('click', function (e) {
-            e.preventDefault();
-            navigateTo('#home');
-        });
-    }
-
-    document.querySelectorAll('.desktop-nav a').forEach(function (link) {
+    document.querySelectorAll('.nav-title a, .desktop-nav a').forEach(function (link) {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             navigateTo(this.getAttribute('href'));
