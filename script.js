@@ -5,7 +5,7 @@ function saveScrollPosition(y) {
     sessionStorage.setItem('scrollPosition', String(y));
 }
 
-// 统一的滚动跳转：导航、前进/后退、回到顶部共用
+// 统一的滚动跳转：导航、前进/后退共用
 function scrollToTarget(targetId) {
     let top = 0;
     if (targetId !== '#home') {
@@ -76,12 +76,11 @@ function setupNavLinks() {
     });
 }
 
-// 统一的滚动处理器：保存位置、导航高亮、回到顶部按钮
+// 统一的滚动处理器：保存位置、导航高亮
 function createScrollHandler() {
     let ticking = false;
     const sections = document.querySelectorAll('section[id]');
     const topNav = document.querySelector('.top-nav');
-    const backToTopButton = document.getElementById('backToTop');
 
     function update() {
         const scrollY = window.pageYOffset;
@@ -105,10 +104,6 @@ function createScrollHandler() {
                 });
             }
             setActiveNavLink(current);
-        }
-
-        if (backToTopButton) {
-            backToTopButton.classList.toggle('visible', scrollY > 300);
         }
 
         ticking = false;
@@ -178,12 +173,6 @@ function init() {
         scrollToTarget(window.location.hash || '#home');
     });
 
-    const backToTopButton = document.getElementById('backToTop');
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', function () {
-            scrollToTarget('#home');
-        });
-    }
 }
 
 if (document.readyState === 'loading') {

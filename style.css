@@ -431,44 +431,6 @@ section[id] {
     line-height: 1.4;
 }
 
-/* 回到顶部按钮样式 */
-.back-to-top {
-    position: fixed;
-    bottom: -100px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: #f8f8f8;
-    color: #2C5AA0;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 18px;
-    transition: bottom 200ms ease-in-out;
-}
-
-.back-to-top.visible {
-    bottom: 30px;
-}
-
-.back-to-top:hover {
-    background-color: #e8e8e8;
-    color: #1a4480;
-}
-
-.back-to-top:active {
-    background-color: #e0e0e0;
-}
-
-.back-to-top:focus {
-    outline: 1px solid #2C5AA0;
-    outline-offset: 1px;
-}
-
 /* 邮件复制成功提示 */
 .email-copy-toast {
     position: absolute;
@@ -691,10 +653,6 @@ section[id] {
         max-width: 100%;
     }
 
-    /* 移动端隐藏返回顶部按钮 */
-    .back-to-top {
-        display: none;
-    }
 }
 
 @media (max-width: 500px) {
